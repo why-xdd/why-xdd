@@ -1,26 +1,25 @@
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:667eea,50:764ba2,100:6B8DD6&height=200&section=header&text=Hi%2C%20I'm%20Artem%20%F0%9F%91%8B&fontSize=46&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=Backend%20%26%20Bot%20Developer%20%E2%80%A2%20Python%20%E2%80%A2%20Go&descSize=20&descAlignY=55" alt="header"/>
+<div align="center">
+<img src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/coding-vibe.gif" width="25%" align="right" />
+<img src="https://readme-typing-svg.demolab.com?font=Inconsolata&weight=500&size=50&duration=4000&pause=300&color=7C7CE0&center=true&vCenter=true&multiline=true&repeat=false&random=false&width=1300&height=140&lines=Hello+hello;I'm+Artem%2C+a+backend+dev+and+bot+wizard+%E2%9C%A9" width="70%" />
+<br><br>
+<pre>
+    🎓 AM&CS @ Financial University • Back-end dev • Bot developer
+        💻 Python • Go • FastAPI • Docker • PostgreSQL • Linux
+      🤖 Local LLMs • RAG • STT/TTS • Discrete-event simulations
+          🎧 Real-time audio DSP • Phase vocoder • VoxShift
+                🎮 Music • Games • Minecraft • Code
+</pre>
+<br>
+<img src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/parrot.gif" height="40" />
+<br><br>
 
-<p align="center">
-  <a href="https://github.com/why-xdd">
-    <img src="https://readme-typing-svg.demolab.com/?font=Fira+Code&weight=600&size=22&duration=3000&pause=800&color=7C7CE0&center=true&vCenter=true&width=620&lines=Backend+%26+Bot+Developer+%F0%9F%9A%80;Python+%E2%80%A2+Go+%E2%80%A2+FastAPI+%E2%80%A2+Docker;I+build+bots%2C+APIs+and+real-time+audio+tools;LLM+integrations%2C+RAG+and+simulations;Open+to+internships+%26+junior+roles+%E2%9C%A8" alt="typing intro">
-  </a>
-</p>
+[![](https://img.shields.io/badge/voxshift-7C7CE0)](https://github.com/why-xdd/voxshift)
+[![](https://img.shields.io/badge/email-EA4335)](mailto:why.not.live.alone@gmail.com)
+[![](https://img.shields.io/badge/open%20to%20work-2ea44f)](https://github.com/why-xdd)
+<img src="https://komarev.com/ghpvc/?username=why-xdd&style=flat&color=764ba2&label=views" alt="profile views">
+</div>
 
-<p align="center">
-  <img src="https://komarev.com/ghpvc/?username=why-xdd&style=for-the-badge&color=764ba2" alt="profile views">
-  <a href="mailto:why.not.live.alone@gmail.com"><img src="https://img.shields.io/badge/Email-contact%20me-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="email"></a>
-  <img src="https://img.shields.io/badge/Moscow-Russia-blue?style=for-the-badge" alt="location">
-  <img src="https://img.shields.io/badge/Open%20to-Internships%20%26%20Junior%20roles-success?style=for-the-badge" alt="open to work">
-</p>
-
-## 🚀 About me
-
-- 🎓 Applied Mathematics & Computer Science student at the **Financial University** (Moscow) — data science, algorithms, probability & statistics
-- 💼 I ship **production bots and backend services**: Telegram / MAX messenger bots, REST APIs, WebApps — from first commit to Docker deploy on a VPS
-- 🤖 Hands-on with **applied AI**: local LLMs (Ollama), RAG pipelines (pgvector + PostgreSQL), LLM API integrations, voice interfaces (STT/TTS), vision-model agents
-- 🎧 I enjoy **real-time DSP**: wrote a phase-vocoder voice changer from scratch in NumPy
-- 🏭 Currently building a **discrete-event simulation of a robotic sorting center** (100k parcels/hour, 400 directions) with SimPy, FastAPI and a React + Three.js 3D replay — hackathon project
-- ⚡ Philosophy: small, complete, working things > half-finished frameworks
+<br>
 
 ## 🛠 Tech stack
 
