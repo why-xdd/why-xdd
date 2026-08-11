@@ -230,11 +230,6 @@ Source stays private; happy to walk through the architecture.
 
 <div align="center">
 
-<img height="160" src="https://github-readme-stats.vercel.app/api?username=why-xdd&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=7C7CE0&icon_color=22D3EE&text_color=8B98A8&count_private=true&rank_icon=github" alt="GitHub stats"/>
-<img height="160" src="https://github-readme-stats.vercel.app/api/top-langs/?username=why-xdd&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=7C7CE0&text_color=8B98A8&langs_count=8" alt="Top languages"/>
-
-<br/><br/>
-
 <img width="94%" src="https://github-readme-activity-graph.vercel.app/graph?username=why-xdd&theme=tokyo-night&hide_border=true&bg_color=0D1117&color=7C7CE0&line=22D3EE&point=F472B6&area=true" alt="Contribution activity"/>
 
 <br/>
