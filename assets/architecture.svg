@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340" width="1200" height="340" role="img" aria-label="The shape most of these projects take: clients, an async application layer with a queue and workers, and a data layer, with metrics running underneath.">
+  <title>How these projects are shaped</title>
+
+  <defs>
+    <linearGradient id="flow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#22D3EE" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#7C7CE0" stop-opacity="0.7"/>
+    </linearGradient>
+    <linearGradient id="flow2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7C7CE0" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#F472B6" stop-opacity="0.7"/>
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#5A6675"/>
+    </marker>
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="1" fill="#1F2833"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="340" rx="16" fill="#0D1117"/>
+  <rect width="1200" height="340" rx="16" fill="url(#grid)"/>
+
+  <g font-family="ui-monospace, 'SF Mono', 'JetBrains Mono', Menlo, Consolas, monospace">
+
+    <!-- Column headings -->
+    <text x="150" y="40" font-size="11" fill="#5A6675" text-anchor="middle" letter-spacing="2">CLIENTS</text>
+    <text x="600" y="40" font-size="11" fill="#5A6675" text-anchor="middle" letter-spacing="2">APPLICATION</text>
+    <text x="1050" y="40" font-size="11" fill="#5A6675" text-anchor="middle" letter-spacing="2">DATA</text>
+
+    <!-- Clients -->
+    <g>
+      <rect x="52" y="64" width="196" height="52" rx="9" fill="#11161D" stroke="#22D3EE" stroke-opacity="0.45"/>
+      <text x="150" y="95" font-size="13" fill="#22D3EE" text-anchor="middle">Telegram bot</text>
+
+      <rect x="52" y="130" width="196" height="52" rx="9" fill="#11161D" stroke="#22D3EE" stroke-opacity="0.45"/>
+      <text x="150" y="161" font-size="13" fill="#22D3EE" text-anchor="middle">HTTP / REST</text>
+
+      <rect x="52" y="196" width="196" height="52" rx="9" fill="#11161D" stroke="#22D3EE" stroke-opacity="0.45"/>
+      <text x="150" y="227" font-size="13" fill="#22D3EE" text-anchor="middle">CLI</text>
+    </g>
+
+    <!-- Application layer -->
+    <rect x="330" y="58" width="540" height="200" rx="12" fill="#11161D" stroke="#2C3846"/>
+    <text x="352" y="82" font-size="11" fill="#5A6675" letter-spacing="1.5">async, typed, one transaction per request</text>
+
+    <rect x="352" y="96" width="150" height="60" rx="8" fill="#161C25" stroke="#7C7CE0" stroke-opacity="0.5"/>
+    <text x="427" y="122" font-size="12" fill="#A78BFA" text-anchor="middle">middleware</text>
+    <text x="427" y="140" font-size="10" fill="#5A6675" text-anchor="middle">auth · limits · i18n</text>
+
+    <rect x="522" y="96" width="150" height="60" rx="8" fill="#161C25" stroke="#7C7CE0" stroke-opacity="0.5"/>
+    <text x="597" y="122" font-size="12" fill="#A78BFA" text-anchor="middle">queue</text>
+    <text x="597" y="140" font-size="10" fill="#5A6675" text-anchor="middle">batching · backpressure</text>
+
+    <rect x="692" y="96" width="156" height="60" rx="8" fill="#161C25" stroke="#7C7CE0" stroke-opacity="0.5"/>
+    <text x="770" y="122" font-size="12" fill="#A78BFA" text-anchor="middle">workers</text>
+    <text x="770" y="140" font-size="10" fill="#5A6675" text-anchor="middle">bounded concurrency</text>
+
+    <!-- The observability strip, drawn under the pipeline because that is
+         where it belongs: beneath everything, not bolted to one box. -->
+    <rect x="352" y="176" width="496" height="46" rx="8" fill="#0D1117" stroke="#FBBF24" stroke-opacity="0.35"/>
+    <text x="600" y="197" font-size="12" fill="#FBBF24" text-anchor="middle">metrics · structured logs · health &amp; readiness</text>
+    <text x="600" y="213" font-size="10" fill="#5A6675" text-anchor="middle">if you cannot see it, you cannot operate it</text>
+
+    <!-- Data -->
+    <g>
+      <rect x="952" y="64" width="196" height="52" rx="9" fill="#11161D" stroke="#F472B6" stroke-opacity="0.45"/>
+      <text x="1050" y="95" font-size="13" fill="#F472B6" text-anchor="middle">PostgreSQL</text>
+
+      <rect x="952" y="130" width="196" height="52" rx="9" fill="#11161D" stroke="#F472B6" stroke-opacity="0.45"/>
+      <text x="1050" y="161" font-size="13" fill="#F472B6" text-anchor="middle">Redis</text>
+
+      <rect x="952" y="196" width="196" height="52" rx="9" fill="#11161D" stroke="#F472B6" stroke-opacity="0.45"/>
+      <text x="1050" y="227" font-size="13" fill="#F472B6" text-anchor="middle">SQLite · files</text>
+    </g>
+
+    <!-- Flows -->
+    <path d="M 252 90 C 292 90 292 126 328 126" fill="none" stroke="url(#flow)" stroke-width="2" marker-end="url(#arrow)"/>
+    <path d="M 252 156 L 328 156" fill="none" stroke="url(#flow)" stroke-width="2" marker-end="url(#arrow)"/>
+    <path d="M 252 222 C 292 222 292 186 328 186" fill="none" stroke="url(#flow)" stroke-width="2" marker-end="url(#arrow)"/>
+
+    <path d="M 872 126 C 912 126 912 90 948 90" fill="none" stroke="url(#flow2)" stroke-width="2" marker-end="url(#arrow)"/>
+    <path d="M 872 156 L 948 156" fill="none" stroke="url(#flow2)" stroke-width="2" marker-end="url(#arrow)"/>
+    <path d="M 872 186 C 912 186 912 222 948 222" fill="none" stroke="url(#flow2)" stroke-width="2" marker-end="url(#arrow)"/>
+
+    <!-- Internal hops -->
+    <path d="M 506 126 L 518 126" stroke="#5A6675" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <path d="M 676 126 L 688 126" stroke="#5A6675" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+    <text x="600" y="292" font-size="12" fill="#5A6675" text-anchor="middle">
+      Same shape in every project here — what changes is what sits in the middle.
+    </text>
+    <text x="600" y="312" font-size="11" fill="#3D4956" text-anchor="middle">
+      inferkit batches it · botkit routes it · slowq measures it · queueviz shows you why it queued
+    </text>
+  </g>
+
+  <rect x="0" y="0" width="1200" height="340" rx="16" fill="none" stroke="#1F2833" stroke-width="2"/>
+</svg>

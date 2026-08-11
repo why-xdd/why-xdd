@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 200" width="580" height="200" role="img" aria-label="inferkit — batched, cached, canary-routed model serving. 16 times the throughput.">
+  <title>inferkit</title>
+  <defs>
+    <radialGradient id="ikGlow" cx="80%" cy="20%" r="70%">
+      <stop offset="0%" stop-color="#22D3EE" stop-opacity="0.20"/>
+      <stop offset="100%" stop-color="#22D3EE" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="580" height="200" rx="12" fill="#11161D" stroke="#1F2833" stroke-width="2"/>
+  <rect width="580" height="200" rx="12" fill="url(#ikGlow)"/>
+  <rect x="0" y="0" width="4" height="200" rx="2" fill="#22D3EE"/>
+
+  <g font-family="ui-monospace, 'SF Mono', 'JetBrains Mono', Menlo, Consolas, monospace">
+    <text x="28" y="42" font-size="19" font-weight="700" fill="#E6EDF3">inferkit</text>
+    <rect x="118" y="26" width="76" height="20" rx="10" fill="#22D3EE" fill-opacity="0.12" stroke="#0E7490"/>
+    <text x="156" y="40" font-size="10" fill="#22D3EE" text-anchor="middle">Python</text>
+
+    <text x="28" y="70" font-size="12.5" fill="#8B98A8">Batched, cached, canary-routed model serving.</text>
+    <text x="28" y="90" font-size="12.5" fill="#8B98A8">Your model is one class with one method.</text>
+
+    <!-- Scattered requests collapsing into one batch, then the model. That
+         collapse *is* the product, so it is the only thing drawn. -->
+    <g transform="translate(28 112)">
+      <rect x="0"  y="4"  width="9" height="9" rx="2" fill="#5A6675"/>
+      <rect x="0"  y="18" width="9" height="9" rx="2" fill="#5A6675"/>
+      <rect x="0"  y="32" width="9" height="9" rx="2" fill="#5A6675"/>
+      <rect x="14" y="11" width="9" height="9" rx="2" fill="#5A6675"/>
+      <rect x="14" y="25" width="9" height="9" rx="2" fill="#5A6675"/>
+
+      <path d="M 32 22 L 52 22" stroke="#2C3846" stroke-width="1.5"/>
+      <rect x="56" y="4" width="34" height="37" rx="5" fill="#22D3EE" fill-opacity="0.16" stroke="#22D3EE"/>
+      <text x="73" y="27" font-size="10" fill="#22D3EE" text-anchor="middle" font-family="ui-monospace, monospace">32</text>
+
+      <path d="M 96 22 L 116 22" stroke="#2C3846" stroke-width="1.5"/>
+      <rect x="120" y="8" width="54" height="28" rx="5" fill="#161C25" stroke="#7C7CE0"/>
+      <text x="147" y="26" font-size="10" fill="#A78BFA" text-anchor="middle">model</text>
+    </g>
+
+    <!-- The measured result, stated rather than implied. -->
+    <g transform="translate(360 112)">
+      <text x="0" y="12" font-size="10" fill="#5A6675">THROUGHPUT</text>
+      <text x="0" y="38" font-size="24" font-weight="700" fill="#34D399">16×</text>
+      <text x="62" y="38" font-size="11" fill="#5A6675">214 → 3 527 req/s</text>
+      <text x="0" y="56" font-size="11" fill="#5A6675">p99 303 ms → 22 ms</text>
+    </g>
+  </g>
+</svg>

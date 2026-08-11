@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 24" width="1200" height="24" role="presentation" aria-hidden="true">
+  <defs>
+    <!-- Fades to nothing at both ends so the rule reads as a horizon rather
+         than a hard box edge. -->
+    <linearGradient id="rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#22D3EE" stop-opacity="0"/>
+      <stop offset="18%"  stop-color="#22D3EE" stop-opacity="0.55"/>
+      <stop offset="50%"  stop-color="#7C7CE0" stop-opacity="0.9"/>
+      <stop offset="82%"  stop-color="#F472B6" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#F472B6" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="0" y="11" width="1200" height="1.5" fill="url(#rule)"/>
+  <circle cx="600" cy="12" r="3.5" fill="#7C7CE0"/>
+  <circle cx="600" cy="12" r="7" fill="none" stroke="#7C7CE0" stroke-opacity="0.35"/>
+</svg>

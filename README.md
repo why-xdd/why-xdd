@@ -1,126 +1,265 @@
 <div align="center">
-<img src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/coding-vibe.gif" width="25%" align="right" alt="developer at work" />
-<img src="https://readme-typing-svg.demolab.com?font=Inconsolata&weight=500&size=50&duration=4000&pause=300&color=7C7CE0&center=true&vCenter=true&multiline=true&repeat=false&random=false&width=1300&height=140&lines=Hello+hello;I'm+Artem%2C+a+backend+dev+and+bot+wizard+%E2%9C%A9" width="70%" alt="Hello hello, I'm Artem, a backend dev and bot wizard" />
-<br><br>
-<pre>
-    🎓 AM&CS @ Financial University • Back-end dev • Bot developer
-        💻 Python • Go • FastAPI • Docker • PostgreSQL • Linux
-      🤖 Local LLMs • RAG • STT/TTS • Discrete-event simulations
-          🎧 Real-time audio DSP • Phase vocoder • VoxShift
-                🎮 Music • Games • Minecraft • Code
-</pre>
-<br>
-<img src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/parrot.gif" height="40" />
-<br><br>
 
-[![](https://img.shields.io/badge/voxshift-7C7CE0)](https://github.com/why-xdd/voxshift)
-[![](https://img.shields.io/badge/email-EA4335)](mailto:why.not.live.alone@gmail.com)
-[![](https://img.shields.io/badge/open%20to%20work-2ea44f)](https://github.com/why-xdd)
-<img src="https://komarev.com/ghpvc/?username=why-xdd&style=flat&color=764ba2&label=views" alt="profile views">
+<img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/header.svg" alt="Artem — backend and ML engineer. Python, Go, real-time audio."/>
+
+<br/>
+
+<a href="mailto:why.not.live.alone@gmail.com"><img src="https://img.shields.io/badge/email-why.not.live.alone%40gmail.com-EA4335?style=flat-square&logo=gmail&logoColor=white&labelColor=0D1117" alt="email"/></a>
+<a href="https://github.com/why-xdd?tab=repositories"><img src="https://img.shields.io/badge/repositories-7C7CE0?style=flat-square&logo=github&logoColor=white&labelColor=0D1117" alt="repositories"/></a>
+<img src="https://img.shields.io/badge/open%20to-internships-34D399?style=flat-square&labelColor=0D1117" alt="open to internships"/>
+<img src="https://komarev.com/ghpvc/?username=why-xdd&style=flat-square&color=7C7CE0&label=views&labelColor=0D1117" alt="profile views"/>
+
 </div>
 
-<br>
+<img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/divider.svg" alt=""/>
 
-## 🛠 Tech stack
+## ⟡ &nbsp;About
 
-<p align="center">
-  <img src="https://skillicons.dev/icons?i=python,go,js,ts,fastapi,react,threejs,postgres,sqlite,redis,docker,nginx,linux,bash,git,githubactions,html,css&perline=9" alt="core stack">
-</p>
+<img align="right" width="26%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/monogram.svg" alt=""/>
 
-**Languages**
+I build the parts of a system that decide whether it stays up — queues,
+batching, backpressure, rollout, and the metrics that tell you which of them
+just broke.
 
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![Go](https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
-![SQL](https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=sqlite&logoColor=white)
-![Bash](https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnubash&logoColor=white)
+Most of my work is **Python** and **Go** on the server side, with a detour into
+**real-time audio DSP** that I enjoyed far more than expected.
 
-**Backend**
+- **`⬢` Services** — FastAPI, asyncio, aiogram 3. Typed, async all the way down, one transaction per request.
+- **`⬢` ML serving** — dynamic batching, result caching, canary rollout with automatic rollback, Prometheus.
+- **`⬢` Data** — PostgreSQL, Redis, SQLite, pgvector. Alembic migrations, and query plans I have actually read.
+- **`⬢` Audio & signal** — phase vocoder, EBU R 128 loudness, VAD, mel fingerprinting, all on numpy and scipy.
+- **`⬢` Shipping** — Docker, GitHub Actions, health and readiness probes. If it is not measured, it is not done.
 
-![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
-![aiogram](https://img.shields.io/badge/aiogram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)
-![asyncio](https://img.shields.io/badge/asyncio-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![REST API](https://img.shields.io/badge/REST%20API-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
-![WebSockets](https://img.shields.io/badge/WebSockets-010101?style=for-the-badge&logo=socketdotio&logoColor=white)
-![Nginx](https://img.shields.io/badge/Nginx-009639?style=for-the-badge&logo=nginx&logoColor=white)
+<br clear="right"/>
 
-**Databases & Storage**
+<div align="center">
+<img width="72%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/terminal.svg" alt="whoami: backend developer, Python · Go · TypeScript · SQL, FastAPI · aiogram 3, PostgreSQL · Redis, Docker · GitHub Actions"/>
+</div>
 
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)
-![SQLite](https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white)
-![Redis](https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white)
-![pgvector](https://img.shields.io/badge/pgvector-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)
+<img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/divider.svg" alt=""/>
 
-**Data Science & AI**
+## ⟡ &nbsp;How I build
 
-![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)
-![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
-![SciPy](https://img.shields.io/badge/SciPy-8CAAE6?style=for-the-badge&logo=scipy&logoColor=white)
-![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white)
-![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white)
-![Ollama](https://img.shields.io/badge/Ollama%20%2F%20local%20LLMs-000000?style=for-the-badge&logo=ollama&logoColor=white)
-![RAG](https://img.shields.io/badge/RAG%20pipelines-6B57FF?style=for-the-badge&logo=openai&logoColor=white)
-![SimPy](https://img.shields.io/badge/SimPy%20(DES)-3776AB?style=for-the-badge&logo=python&logoColor=white)
+<div align="center">
 
-**DevOps & Tools**
+*The shape almost everything here takes — clients on the left, data on the right,<br/>
+and an async, typed application layer in between with its instrumentation underneath.*
 
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
-![Docker Compose](https://img.shields.io/badge/Docker%20Compose-2496ED?style=for-the-badge&logo=docker&logoColor=white)
-![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions%20(CI%2FCD)-2088FF?style=for-the-badge&logo=githubactions&logoColor=white)
-![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
-![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
-![pytest](https://img.shields.io/badge/pytest-0A9EDC?style=for-the-badge&logo=pytest&logoColor=white)
+<br/>
 
-**Frontend**
+<img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/architecture.svg" alt="Architecture: clients, an async application layer with middleware, queue and workers, and a data layer, with metrics and health probes underneath."/>
 
-![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
-![Three.js](https://img.shields.io/badge/Three.js%20(R3F)-000000?style=for-the-badge&logo=threedotjs&logoColor=white)
-![Telegram WebApps](https://img.shields.io/badge/Telegram%20WebApps-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+</div>
 
-## 📌 Projects
+<img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/divider.svg" alt=""/>
 
-| Project | Stack | What it is |
-|---|---|---|
-| 🃏 **FriendCards** *(private, in production)* | Python, aiogram, FastAPI, SQLite, Telegram WebApp, Docker | Collectible card game bot with an in-game economy, multi-card trading, mini-games (Blackjack, Flappy Bird, Wheel of Fortune), admin panel and a WebApp frontend. Deployed on a VPS, live users, zero-downtime schema migrations |
-| 🎙️ [**VoxShift**](https://github.com/why-xdd/voxshift) | Python, NumPy, sounddevice, CustomTkinter | Real-time voice changer: phase-vocoder pitch shifting, effect presets (Robot, Chipmunk, Deep, Demon), VU meters, virtual-mic output via VB-Cable — so the changed voice works in Discord and games |
-| 🎫 **max-support-bot** *(private)* | Go (stdlib), SQLite | Tech-support ticket bot for the MAX messenger: long-polling client for the MAX Bot API written from scratch with the standard library, inline keyboards, ticket routing to an admin chat, feedback loop |
-| 🗣️ **Diego** *(WIP)* | Python, Ollama (qwen2-VL), STT/TTS | Voice-controlled desktop assistant for Windows: local vision LLM looks at the screen and executes actions, Russian speech in/out, conversation memory |
-| 📚 **University RAG assistant** *(team project)* | Python, Qwen, pgvector, PostgreSQL | Retrieval-augmented chatbot answering student questions over university documents; I worked on the pipeline and presented the defense |
-| 🏭 **Sorting-center simulation** *(hackathon, in progress)* | Python, SimPy, FastAPI, React, Three.js | Discrete-event model of a robotic sorting hub: 100 000 items/hour, 400 destinations, metrics dashboard and 3D replay of the warehouse floor |
+## ⟡ &nbsp;Projects
 
-## 📊 GitHub stats
+<div align="center">
 
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=why-xdd&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&rank_icon=github" alt="GitHub stats" height="165">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=why-xdd&layout=compact&theme=tokyonight&hide_border=true&langs_count=8" alt="Top languages" height="165">
-</p>
+*Every one of these is real, working code with tests and CI — not a template with the name changed.*
+<br/>
+*Each README explains **why** the code is shaped that way, including the bugs that shaped it.*
 
-<p align="center">
-  <img src="https://streak-stats.demolab.com?user=why-xdd&theme=tokyonight&hide_border=true" alt="GitHub streak" height="165">
-</p>
+</div>
 
-<p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=why-xdd&theme=tokyo-night&hide_border=true&area=true" alt="Activity graph" width="94%">
-</p>
+<br/>
 
-## 🐍 Contribution snake
+<table>
+<tr>
+<td width="50%" valign="top">
 
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/why-xdd/why-xdd/output/github-snake-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/why-xdd/why-xdd/output/github-snake.svg">
-    <img src="https://raw.githubusercontent.com/why-xdd/why-xdd/output/github-snake.svg" alt="contribution snake">
-  </picture>
-</p>
+<a href="https://github.com/why-xdd/inferkit"><img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/card-inferkit.svg" alt="inferkit — batched, cached, canary-routed model serving. 16× throughput."/></a>
 
-## 📫 Contact
+#### [`⬢` inferkit](https://github.com/why-xdd/inferkit)
 
-<p align="center">
-  <a href="mailto:why.not.live.alone@gmail.com"><img src="https://img.shields.io/badge/Gmail-why.not.live.alone%40gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="email"></a>
-  <a href="https://github.com/why-xdd"><img src="https://img.shields.io/badge/GitHub-why--xdd-181717?style=for-the-badge&logo=github&logoColor=white" alt="github"></a>
-</p>
+The serving layer around a model you already have. Dynamic batching, result
+caching keyed on model *version*, canary routing that rolls itself back when a
+candidate exceeds its error budget.
 
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:667eea,50:764ba2,100:6B8DD6&height=120&section=footer" alt="footer"/>
+**16× throughput and 13× lower p99** in a benchmark you can re-run — the README
+prints the command.
+
+</td>
+<td width="50%" valign="top">
+
+<a href="https://github.com/why-xdd/voicedata"><img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/card-voicedata.svg" alt="voicedata — prepare and audit speech datasets."/></a>
+
+#### [`⬢` voicedata](https://github.com/why-xdd/voicedata)
+
+Raw recordings into a dataset you can train on: resample, slice on speech,
+normalise to **ITU-R BS.1770-4** loudness with true-peak limiting, find the
+duplicates, and say what is wrong with the rest.
+
+Near-duplicates are found by how a clip *sounds*, so a re-encode still matches.
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+<a href="https://github.com/why-xdd/askdocs"><img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/card-askdocs.svg" alt="askdocs — local hybrid retrieval with a measured eval."/></a>
+
+#### [`⬢` askdocs](https://github.com/why-xdd/askdocs)
+
+Ask your own documents, locally. BM25 and vectors fused by reciprocal rank, so
+it finds both `PAY_1004` and *"what happens when I reuse an idempotency key"*.
+
+Ships `askdocs eval`, because "hybrid retrieval helps" is a claim, and the
+numbers in the README are the measurement — including where it only ties.
+
+</td>
+<td width="50%" valign="top">
+
+<a href="https://github.com/why-xdd/slowq"><img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/card-slowq.svg" alt="slowq — rank Postgres queries by the time they actually cost."/></a>
+
+#### [`⬢` slowq](https://github.com/why-xdd/slowq)
+
+One static Go binary over `pg_stat_statements`. Ranks by **total** time, because
+the query worth fixing is almost never the slowest one — it is the 0.8 ms query
+called five million times.
+
+Explains each finding, and proposes indexes with the columns in the right order.
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+<a href="https://github.com/why-xdd/botkit"><img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/card-botkit.svg" alt="botkit — an aiogram 3 starter with the boring parts already correct."/></a>
+
+#### [`⬢` botkit](https://github.com/why-xdd/botkit)
+
+The aiogram 3 starter I wish I had had: FSM forms you can cancel from any state,
+i18n resolved in middleware with a CI parity check, roles that compare rather
+than enumerate, and a broadcast paced under Telegram's rate limit.
+
+Middleware order is documented, because it is load-bearing.
+
+</td>
+<td width="50%" valign="top">
+
+<a href="https://github.com/why-xdd/queueviz"><img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/card-queueviz.svg" alt="queueviz — an interactive queueing simulation."/></a>
+
+#### [`⬢` queueviz](https://github.com/why-xdd/queueviz) &nbsp;·&nbsp; [**live →**](https://queueviz.vercel.app)
+
+Queueing theory is taught as algebra and experienced as an outage. This is the
+same thing as a live simulation: watch a queue build at 95% load, then watch it
+*not* build once backpressure is on.
+
+Seven presets, zero runtime dependencies, 8.5 kB gzipped. **Running at
+[queueviz.vercel.app](https://queueviz.vercel.app)** — no install, no signup.
+
+</td>
+</tr>
+</table>
+
+<img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/divider.svg" alt=""/>
+
+## ⟡ &nbsp;Also
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+#### [`⬢` VoxShift](https://github.com/why-xdd/voxshift)
+
+Real-time voice changer: phase-vocoder pitch shifting, effect presets, VU
+meters, and virtual-mic output through VB-Cable so the changed voice works in
+Discord and games.
+
+<img src="https://skillicons.dev/icons?i=python&theme=dark" height="28" alt="Python"/>
+
+</td>
+<td width="50%" valign="top">
+
+#### `⬢` FriendCards &nbsp;<sub>private · in production</sub>
+
+A collectible-card Telegram bot with an in-game economy, trading, mini-games, an
+admin panel and a WebApp frontend. Deployed on a VPS with live users and
+zero-downtime schema migrations.
+
+Source stays private; happy to walk through the architecture.
+
+</td>
+</tr>
+</table>
+
+<img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/divider.svg" alt=""/>
+
+## ⟡ &nbsp;Stack
+
+<div align="center">
+
+**`◈` Languages**
+
+<img src="https://skillicons.dev/icons?i=python,go,ts,js,bash&theme=dark" alt="Python, Go, TypeScript, JavaScript, Bash"/>
+
+**`◈` Backend**
+
+<img src="https://skillicons.dev/icons?i=fastapi,nodejs,nginx,redis&theme=dark" alt="FastAPI, Node.js, nginx, Redis"/>
+<img src="https://img.shields.io/badge/aiogram_3-0D1117?style=for-the-badge&logo=telegram&logoColor=2CA5E0" alt="aiogram 3"/>
+<img src="https://img.shields.io/badge/asyncio-0D1117?style=for-the-badge&logo=python&logoColor=22D3EE" alt="asyncio"/>
+
+**`◈` Data**
+
+<img src="https://skillicons.dev/icons?i=postgres,sqlite&theme=dark" alt="PostgreSQL, SQLite"/>
+<img src="https://img.shields.io/badge/SQLAlchemy_2-0D1117?style=for-the-badge&logo=sqlalchemy&logoColor=D71F00" alt="SQLAlchemy"/>
+<img src="https://img.shields.io/badge/Alembic-0D1117?style=for-the-badge&logo=python&logoColor=A78BFA" alt="Alembic"/>
+<img src="https://img.shields.io/badge/pgvector-0D1117?style=for-the-badge&logo=postgresql&logoColor=F472B6" alt="pgvector"/>
+
+**`◈` ML & signal**
+
+<img src="https://img.shields.io/badge/NumPy-0D1117?style=for-the-badge&logo=numpy&logoColor=22D3EE" alt="NumPy"/>
+<img src="https://img.shields.io/badge/SciPy-0D1117?style=for-the-badge&logo=scipy&logoColor=8CAAE6" alt="SciPy"/>
+<img src="https://img.shields.io/badge/scikit--learn-0D1117?style=for-the-badge&logo=scikitlearn&logoColor=F7931E" alt="scikit-learn"/>
+<img src="https://img.shields.io/badge/Ollama-0D1117?style=for-the-badge&logo=ollama&logoColor=E6EDF3" alt="Ollama"/>
+<img src="https://img.shields.io/badge/SimPy-0D1117?style=for-the-badge&logo=python&logoColor=34D399" alt="SimPy"/>
+
+**`◈` Shipping**
+
+<img src="https://skillicons.dev/icons?i=docker,githubactions,git,linux,vscode&theme=dark" alt="Docker, GitHub Actions, Git, Linux, VS Code"/>
+<img src="https://img.shields.io/badge/Prometheus-0D1117?style=for-the-badge&logo=prometheus&logoColor=E6522C" alt="Prometheus"/>
+<img src="https://img.shields.io/badge/pytest-0D1117?style=for-the-badge&logo=pytest&logoColor=0A9EDC" alt="pytest"/>
+
+</div>
+
+<img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/divider.svg" alt=""/>
+
+## ⟡ &nbsp;Activity
+
+<div align="center">
+
+<img height="160" src="https://github-readme-stats.vercel.app/api?username=why-xdd&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=7C7CE0&icon_color=22D3EE&text_color=8B98A8&count_private=true&rank_icon=github" alt="GitHub stats"/>
+<img height="160" src="https://github-readme-stats.vercel.app/api/top-langs/?username=why-xdd&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=7C7CE0&text_color=8B98A8&langs_count=8" alt="Top languages"/>
+
+<br/><br/>
+
+<img width="94%" src="https://github-readme-activity-graph.vercel.app/graph?username=why-xdd&theme=tokyo-night&hide_border=true&bg_color=0D1117&color=7C7CE0&line=22D3EE&point=F472B6&area=true" alt="Contribution activity"/>
+
+<br/>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/why-xdd/why-xdd/output/github-snake-dark.svg"/>
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/why-xdd/why-xdd/output/github-snake.svg"/>
+  <img width="94%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/output/github-snake.svg" alt="Contribution snake"/>
+</picture>
+
+</div>
+
+<img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/divider.svg" alt=""/>
+
+<div align="center">
+
+### Get in touch
+
+Currently a CS student in Moscow, looking for a backend or ML internship.
+
+<a href="mailto:why.not.live.alone@gmail.com"><img src="https://img.shields.io/badge/why.not.live.alone@gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white&labelColor=0D1117" alt="email"/></a>
+<a href="https://github.com/why-xdd"><img src="https://img.shields.io/badge/why--xdd-181717?style=for-the-badge&logo=github&logoColor=white&labelColor=0D1117" alt="GitHub"/></a>
+
+<br/><br/>
+
+<sub><i>Every project above ships with tests and CI. 229 of them, at last count.</i></sub>
+
+</div>

@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 200" width="580" height="200" role="img" aria-label="voicedata — prepare and audit speech datasets: slice on speech, normalise to EBU R 128, find near-duplicates.">
+  <title>voicedata</title>
+  <defs>
+    <radialGradient id="vdGlow" cx="80%" cy="20%" r="70%">
+      <stop offset="0%" stop-color="#F472B6" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#F472B6" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="580" height="200" rx="12" fill="#11161D" stroke="#1F2833" stroke-width="2"/>
+  <rect width="580" height="200" rx="12" fill="url(#vdGlow)"/>
+  <rect x="0" y="0" width="4" height="200" rx="2" fill="#F472B6"/>
+
+  <g font-family="ui-monospace, 'SF Mono', 'JetBrains Mono', Menlo, Consolas, monospace">
+    <text x="28" y="42" font-size="19" font-weight="700" fill="#E6EDF3">voicedata</text>
+    <rect x="150" y="26" width="76" height="20" rx="10" fill="#F472B6" fill-opacity="0.12" stroke="#9D174D"/>
+    <text x="188" y="40" font-size="10" fill="#F472B6" text-anchor="middle">Python</text>
+
+    <text x="28" y="70" font-size="12.5" fill="#8B98A8">Raw recordings into a speech dataset you can</text>
+    <text x="28" y="90" font-size="12.5" fill="#8B98A8">train on. Slice, normalise, deduplicate, audit.</text>
+
+    <!-- A waveform cut on its silences: the core operation, drawn literally. -->
+    <g transform="translate(28 128)">
+      <line x1="0" y1="0" x2="300" y2="0" stroke="#1F2833"/>
+
+      <g fill="#5A6675">
+        <rect x="2"  y="-3"  width="3" height="6"  rx="1.5"/>
+        <rect x="9"  y="-2"  width="3" height="4"  rx="1.5"/>
+      </g>
+
+      <rect x="18" y="-30" width="76" height="60" rx="4" fill="#F472B6" fill-opacity="0.07"/>
+      <g fill="#F472B6">
+        <rect x="22" y="-14" width="3" height="28" rx="1.5"/>
+        <rect x="30" y="-22" width="3" height="44" rx="1.5"/>
+        <rect x="38" y="-9"  width="3" height="18" rx="1.5"/>
+        <rect x="46" y="-26" width="3" height="52" rx="1.5"/>
+        <rect x="54" y="-16" width="3" height="32" rx="1.5"/>
+        <rect x="62" y="-24" width="3" height="48" rx="1.5"/>
+        <rect x="70" y="-11" width="3" height="22" rx="1.5"/>
+        <rect x="78" y="-19" width="3" height="38" rx="1.5"/>
+        <rect x="86" y="-7"  width="3" height="14" rx="1.5"/>
+      </g>
+
+      <g fill="#5A6675">
+        <rect x="102" y="-2" width="3" height="4" rx="1.5"/>
+        <rect x="110" y="-3" width="3" height="6" rx="1.5"/>
+        <rect x="118" y="-2" width="3" height="4" rx="1.5"/>
+      </g>
+
+      <rect x="130" y="-30" width="70" height="60" rx="4" fill="#F472B6" fill-opacity="0.07"/>
+      <g fill="#F472B6">
+        <rect x="134" y="-18" width="3" height="36" rx="1.5"/>
+        <rect x="142" y="-25" width="3" height="50" rx="1.5"/>
+        <rect x="150" y="-12" width="3" height="24" rx="1.5"/>
+        <rect x="158" y="-21" width="3" height="42" rx="1.5"/>
+        <rect x="166" y="-15" width="3" height="30" rx="1.5"/>
+        <rect x="174" y="-27" width="3" height="54" rx="1.5"/>
+        <rect x="182" y="-10" width="3" height="20" rx="1.5"/>
+        <rect x="190" y="-17" width="3" height="34" rx="1.5"/>
+      </g>
+
+      <g fill="#5A6675">
+        <rect x="208" y="-2" width="3" height="4" rx="1.5"/>
+        <rect x="216" y="-3" width="3" height="6" rx="1.5"/>
+      </g>
+
+      <!-- Cut markers on the silences, not on a clock. -->
+      <g stroke="#22D3EE" stroke-dasharray="3 3">
+        <line x1="16"  y1="-34" x2="16"  y2="34"/>
+        <line x1="96"  y1="-34" x2="96"  y2="34"/>
+        <line x1="128" y1="-34" x2="128" y2="34"/>
+        <line x1="202" y1="-34" x2="202" y2="34"/>
+      </g>
+    </g>
+
+    <g transform="translate(370 116)">
+      <text x="0" y="0" font-size="10" fill="#5A6675">LOUDNESS</text>
+      <text x="0" y="24" font-size="20" font-weight="700" fill="#34D399">−23 LUFS</text>
+      <text x="0" y="44" font-size="11" fill="#5A6675">ITU-R BS.1770-4, gated</text>
+      <text x="0" y="62" font-size="11" fill="#5A6675">true-peak limited</text>
+    </g>
+  </g>
+</svg>
