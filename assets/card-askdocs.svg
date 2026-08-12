@@ -1,5 +1,29 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 200" width="580" height="200" role="img" aria-label="askdocs — local hybrid retrieval over your own documents, with an eval command that measures whether it helps.">
   <title>askdocs</title>
+
+  <style>
+    /* The two rankings feed in, the fusion box thinks, the fused list emerges.
+       That order is the argument the card is making. */
+    .rank { transform-box: fill-box; transform-origin: left center; animation: feed 3.4s ease-in-out infinite; }
+    @keyframes feed {
+      0%, 10%   { transform: scaleX(.25); opacity: .5; }
+      40%, 100% { transform: scaleX(1);   opacity: 1;  }
+    }
+    .fused { transform-box: fill-box; transform-origin: left center; animation: emerge 3.4s ease-in-out infinite; }
+    @keyframes emerge {
+      0%, 45%   { transform: scaleX(0); opacity: 0; }
+      70%, 100% { transform: scaleX(1); opacity: 1; }
+    }
+    .rrf { animation: think 3.4s ease-in-out infinite; }
+    @keyframes think {
+      0%, 40% { stroke-opacity: .45; }
+      55%     { stroke-opacity: 1;   }
+      100%    { stroke-opacity: .45; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .rank, .fused, .rrf { animation: none; opacity: 1; }
+    }
+  </style>
   <defs>
     <radialGradient id="adGlow" cx="80%" cy="20%" r="70%">
       <stop offset="0%" stop-color="#A78BFA" stop-opacity="0.20"/>
@@ -23,23 +47,23 @@
          plumbing, so nothing else is drawn. -->
     <g transform="translate(28 112)">
       <text x="0" y="8" font-size="9" fill="#5A6675">BM25</text>
-      <rect x="0" y="14" width="52" height="7" rx="3.5" fill="#22D3EE"/>
-      <rect x="0" y="25" width="38" height="7" rx="3.5" fill="#22D3EE" fill-opacity="0.55"/>
-      <rect x="0" y="36" width="26" height="7" rx="3.5" fill="#22D3EE" fill-opacity="0.3"/>
+      <rect class="rank" x="0" y="14" width="52" height="7" rx="3.5" fill="#22D3EE"/>
+      <rect class="rank" style="animation-delay:-.15s" x="0" y="25" width="38" height="7" rx="3.5" fill="#22D3EE" fill-opacity="0.55"/>
+      <rect class="rank" style="animation-delay:-.3s" x="0" y="36" width="26" height="7" rx="3.5" fill="#22D3EE" fill-opacity="0.3"/>
 
       <text x="0" y="60" font-size="9" fill="#5A6675">VECTORS</text>
-      <rect x="0" y="66" width="44" height="7" rx="3.5" fill="#F472B6"/>
+      <rect class="rank" style="animation-delay:-.45s" x="0" y="66" width="44" height="7" rx="3.5" fill="#F472B6"/>
 
       <path d="M 60 26 C 78 26 78 44 96 44" fill="none" stroke="#2C3846" stroke-width="1.5"/>
       <path d="M 52 70 C 76 70 76 48 96 48" fill="none" stroke="#2C3846" stroke-width="1.5"/>
 
-      <rect x="100" y="30" width="46" height="32" rx="6" fill="#161C25" stroke="#A78BFA"/>
+      <rect class="rrf" x="100" y="30" width="46" height="32" rx="6" fill="#161C25" stroke="#A78BFA"/>
       <text x="123" y="50" font-size="10" fill="#A78BFA" text-anchor="middle">RRF</text>
 
       <path d="M 150 46 L 168 46" stroke="#2C3846" stroke-width="1.5"/>
-      <rect x="172" y="34" width="60" height="7" rx="3.5" fill="#34D399"/>
-      <rect x="172" y="45" width="46" height="7" rx="3.5" fill="#34D399" fill-opacity="0.6"/>
-      <rect x="172" y="56" width="34" height="7" rx="3.5" fill="#34D399" fill-opacity="0.35"/>
+      <rect class="fused" x="172" y="34" width="60" height="7" rx="3.5" fill="#34D399"/>
+      <rect class="fused" style="animation-delay:.08s" x="172" y="45" width="46" height="7" rx="3.5" fill="#34D399" fill-opacity="0.6"/>
+      <rect class="fused" style="animation-delay:.16s" x="172" y="56" width="34" height="7" rx="3.5" fill="#34D399" fill-opacity="0.35"/>
     </g>
 
     <g transform="translate(388 112)">

@@ -139,7 +139,7 @@ Middleware order is documented, because it is load-bearing.
 </td>
 <td width="50%" valign="top">
 
-<a href="https://github.com/why-xdd/queueviz"><img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/card-queueviz.svg" alt="queueviz — an interactive queueing simulation."/></a>
+<a href="https://queueviz.vercel.app"><img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/queueviz-demo.gif" alt="queueviz running at 150% offered load: three tenant lanes filling at different rates under weighted fair queueing"/></a>
 
 #### [`⬢` queueviz](https://github.com/why-xdd/queueviz) &nbsp;·&nbsp; [**live →**](https://queueviz.vercel.app)
 
@@ -147,7 +147,8 @@ Queueing theory is taught as algebra and experienced as an outage. This is the
 same thing as a live simulation: watch a queue build at 95% load, then watch it
 *not* build once backpressure is on.
 
-Seven presets, zero runtime dependencies, 8.5 kB gzipped. **Running at
+Above: fair queueing at 150% load, recorded from the running page. Seven
+presets, zero runtime dependencies, 8.5 kB gzipped. **Live at
 [queueviz.vercel.app](https://queueviz.vercel.app)** — no install, no signup.
 
 </td>

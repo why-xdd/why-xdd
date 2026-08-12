@@ -1,5 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 200" width="580" height="200" role="img" aria-label="queueviz — an interactive simulation of queue disciplines, backpressure and fair queueing.">
   <title>queueviz</title>
+
+  <style>
+    /* Queued items age from cool to warm as they wait, and each worker fills
+       across its slot — both exactly as the running app draws them. */
+    .q rect { animation: age 2.6s ease-in-out infinite; }
+    @keyframes age { 0%, 100% { opacity: .4; } 50% { opacity: 1; } }
+    .w { transform-box: fill-box; transform-origin: left center; animation: serve 2.6s cubic-bezier(.16,1,.3,1) infinite; }
+    @keyframes serve {
+      0%        { transform: scaleX(.05); }
+      70%, 100% { transform: scaleX(1);   }
+    }
+    @media (prefers-reduced-motion: reduce) { .q rect, .w { animation: none; opacity: 1; } }
+  </style>
   <defs>
     <radialGradient id="qvGlow" cx="80%" cy="20%" r="70%">
       <stop offset="0%" stop-color="#34D399" stop-opacity="0.18"/>
@@ -30,7 +43,7 @@
 
       <path d="M 22 17 L 36 17" stroke="#2C3846" stroke-width="1.5"/>
 
-      <g fill="#22D3EE">
+      <g class="q" fill="#22D3EE">
         <rect x="40" y="4"  width="9" height="9" rx="2"/>
         <rect x="52" y="4"  width="9" height="9" rx="2" fill-opacity="0.85"/>
         <rect x="64" y="4"  width="9" height="9" rx="2" fill-opacity="0.7"/>
@@ -47,11 +60,11 @@
 
       <g>
         <rect x="110" y="2"  width="58" height="9" rx="4" fill="#1F2833"/>
-        <rect x="110" y="2"  width="42" height="9" rx="4" fill="#A78BFA"/>
+        <rect class="w" x="110" y="2"  width="42" height="9" rx="4" fill="#A78BFA"/>
         <rect x="110" y="15" width="58" height="9" rx="4" fill="#1F2833"/>
-        <rect x="110" y="15" width="20" height="9" rx="4" fill="#22D3EE"/>
+        <rect class="w" style="animation-delay:-.6s" x="110" y="15" width="20" height="9" rx="4" fill="#22D3EE"/>
         <rect x="110" y="28" width="58" height="9" rx="4" fill="#1F2833"/>
-        <rect x="110" y="28" width="50" height="9" rx="4" fill="#F472B6"/>
+        <rect class="w" style="animation-delay:-1.2s" x="110" y="28" width="50" height="9" rx="4" fill="#F472B6"/>
       </g>
       <text x="0" y="54" font-size="9" fill="#5A6675">arrivals → queue → workers</text>
     </g>

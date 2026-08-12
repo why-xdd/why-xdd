@@ -17,19 +17,46 @@
     <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
       <circle cx="1" cy="1" r="1" fill="#1F2833"/>
     </pattern>
+
+    <!-- The routes requests travel. Declared once and referenced by both the
+         drawn edge and the packet riding along it, so the two can never drift
+         apart the way two hand-written copies would. -->
+    <path id="inTop"  d="M 252 90 C 292 90 292 126 328 126"/>
+    <path id="inMid"  d="M 252 156 L 328 156"/>
+    <path id="inLow"  d="M 252 222 C 292 222 292 186 328 186"/>
+    <path id="outTop" d="M 872 126 C 912 126 912 90 948 90"/>
+    <path id="outMid" d="M 872 156 L 948 156"/>
+    <path id="outLow" d="M 872 186 C 912 186 912 222 948 222"/>
+    <path id="hop1"   d="M 506 126 L 518 126"/>
+    <path id="hop2"   d="M 676 126 L 688 126"/>
   </defs>
+
+  <style>
+    .packet { animation: none; }
+    .pulse-box { animation: boxPulse 4s ease-in-out infinite; }
+    @keyframes boxPulse {
+      0%, 100% { stroke-opacity: 0.5; }
+      50%      { stroke-opacity: 1;   }
+    }
+    .obs { animation: obsPulse 3.2s ease-in-out infinite; }
+    @keyframes obsPulse {
+      0%, 100% { stroke-opacity: 0.35; }
+      50%      { stroke-opacity: 0.85; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .pulse-box, .obs { animation: none; }
+    }
+  </style>
 
   <rect width="1200" height="340" rx="16" fill="#0D1117"/>
   <rect width="1200" height="340" rx="16" fill="url(#grid)"/>
 
   <g font-family="ui-monospace, 'SF Mono', 'JetBrains Mono', Menlo, Consolas, monospace">
 
-    <!-- Column headings -->
-    <text x="150" y="40" font-size="11" fill="#5A6675" text-anchor="middle" letter-spacing="2">CLIENTS</text>
-    <text x="600" y="40" font-size="11" fill="#5A6675" text-anchor="middle" letter-spacing="2">APPLICATION</text>
+    <text x="150"  y="40" font-size="11" fill="#5A6675" text-anchor="middle" letter-spacing="2">CLIENTS</text>
+    <text x="600"  y="40" font-size="11" fill="#5A6675" text-anchor="middle" letter-spacing="2">APPLICATION</text>
     <text x="1050" y="40" font-size="11" fill="#5A6675" text-anchor="middle" letter-spacing="2">DATA</text>
 
-    <!-- Clients -->
     <g>
       <rect x="52" y="64" width="196" height="52" rx="9" fill="#11161D" stroke="#22D3EE" stroke-opacity="0.45"/>
       <text x="150" y="95" font-size="13" fill="#22D3EE" text-anchor="middle">Telegram bot</text>
@@ -41,29 +68,25 @@
       <text x="150" y="227" font-size="13" fill="#22D3EE" text-anchor="middle">CLI</text>
     </g>
 
-    <!-- Application layer -->
     <rect x="330" y="58" width="540" height="200" rx="12" fill="#11161D" stroke="#2C3846"/>
     <text x="352" y="82" font-size="11" fill="#5A6675" letter-spacing="1.5">async, typed, one transaction per request</text>
 
-    <rect x="352" y="96" width="150" height="60" rx="8" fill="#161C25" stroke="#7C7CE0" stroke-opacity="0.5"/>
+    <rect class="pulse-box" x="352" y="96" width="150" height="60" rx="8" fill="#161C25" stroke="#7C7CE0"/>
     <text x="427" y="122" font-size="12" fill="#A78BFA" text-anchor="middle">middleware</text>
     <text x="427" y="140" font-size="10" fill="#5A6675" text-anchor="middle">auth · limits · i18n</text>
 
-    <rect x="522" y="96" width="150" height="60" rx="8" fill="#161C25" stroke="#7C7CE0" stroke-opacity="0.5"/>
+    <rect class="pulse-box" style="animation-delay:-1.3s" x="522" y="96" width="150" height="60" rx="8" fill="#161C25" stroke="#7C7CE0"/>
     <text x="597" y="122" font-size="12" fill="#A78BFA" text-anchor="middle">queue</text>
     <text x="597" y="140" font-size="10" fill="#5A6675" text-anchor="middle">batching · backpressure</text>
 
-    <rect x="692" y="96" width="156" height="60" rx="8" fill="#161C25" stroke="#7C7CE0" stroke-opacity="0.5"/>
+    <rect class="pulse-box" style="animation-delay:-2.6s" x="692" y="96" width="156" height="60" rx="8" fill="#161C25" stroke="#7C7CE0"/>
     <text x="770" y="122" font-size="12" fill="#A78BFA" text-anchor="middle">workers</text>
     <text x="770" y="140" font-size="10" fill="#5A6675" text-anchor="middle">bounded concurrency</text>
 
-    <!-- The observability strip, drawn under the pipeline because that is
-         where it belongs: beneath everything, not bolted to one box. -->
-    <rect x="352" y="176" width="496" height="46" rx="8" fill="#0D1117" stroke="#FBBF24" stroke-opacity="0.35"/>
+    <rect class="obs" x="352" y="176" width="496" height="46" rx="8" fill="#0D1117" stroke="#FBBF24"/>
     <text x="600" y="197" font-size="12" fill="#FBBF24" text-anchor="middle">metrics · structured logs · health &amp; readiness</text>
     <text x="600" y="213" font-size="10" fill="#5A6675" text-anchor="middle">if you cannot see it, you cannot operate it</text>
 
-    <!-- Data -->
     <g>
       <rect x="952" y="64" width="196" height="52" rx="9" fill="#11161D" stroke="#F472B6" stroke-opacity="0.45"/>
       <text x="1050" y="95" font-size="13" fill="#F472B6" text-anchor="middle">PostgreSQL</text>
@@ -75,18 +98,52 @@
       <text x="1050" y="227" font-size="13" fill="#F472B6" text-anchor="middle">SQLite · files</text>
     </g>
 
-    <!-- Flows -->
-    <path d="M 252 90 C 292 90 292 126 328 126" fill="none" stroke="url(#flow)" stroke-width="2" marker-end="url(#arrow)"/>
-    <path d="M 252 156 L 328 156" fill="none" stroke="url(#flow)" stroke-width="2" marker-end="url(#arrow)"/>
-    <path d="M 252 222 C 292 222 292 186 328 186" fill="none" stroke="url(#flow)" stroke-width="2" marker-end="url(#arrow)"/>
+    <use href="#inTop"  fill="none" stroke="url(#flow)"  stroke-width="2" marker-end="url(#arrow)"/>
+    <use href="#inMid"  fill="none" stroke="url(#flow)"  stroke-width="2" marker-end="url(#arrow)"/>
+    <use href="#inLow"  fill="none" stroke="url(#flow)"  stroke-width="2" marker-end="url(#arrow)"/>
+    <use href="#outTop" fill="none" stroke="url(#flow2)" stroke-width="2" marker-end="url(#arrow)"/>
+    <use href="#outMid" fill="none" stroke="url(#flow2)" stroke-width="2" marker-end="url(#arrow)"/>
+    <use href="#outLow" fill="none" stroke="url(#flow2)" stroke-width="2" marker-end="url(#arrow)"/>
+    <use href="#hop1" stroke="#5A6675" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <use href="#hop2" stroke="#5A6675" stroke-width="1.5" marker-end="url(#arrow)"/>
 
-    <path d="M 872 126 C 912 126 912 90 948 90" fill="none" stroke="url(#flow2)" stroke-width="2" marker-end="url(#arrow)"/>
-    <path d="M 872 156 L 948 156" fill="none" stroke="url(#flow2)" stroke-width="2" marker-end="url(#arrow)"/>
-    <path d="M 872 186 C 912 186 912 222 948 222" fill="none" stroke="url(#flow2)" stroke-width="2" marker-end="url(#arrow)"/>
+    <!-- Requests riding the edges. SMIL animateMotion rather than CSS, because
+         it can follow an arbitrary path by reference; CSS offset-path cannot
+         take a <path> id in every renderer that matters here. -->
+    <g>
+      <circle r="3.5" fill="#22D3EE">
+        <animateMotion dur="2.2s" repeatCount="indefinite" begin="0s"><mpath href="#inTop"/></animateMotion>
+        <animate attributeName="opacity" values="0;1;1;0" dur="2.2s" repeatCount="indefinite" begin="0s"/>
+      </circle>
+      <circle r="3.5" fill="#22D3EE">
+        <animateMotion dur="2.2s" repeatCount="indefinite" begin="0.7s"><mpath href="#inMid"/></animateMotion>
+        <animate attributeName="opacity" values="0;1;1;0" dur="2.2s" repeatCount="indefinite" begin="0.7s"/>
+      </circle>
+      <circle r="3.5" fill="#22D3EE">
+        <animateMotion dur="2.2s" repeatCount="indefinite" begin="1.4s"><mpath href="#inLow"/></animateMotion>
+        <animate attributeName="opacity" values="0;1;1;0" dur="2.2s" repeatCount="indefinite" begin="1.4s"/>
+      </circle>
 
-    <!-- Internal hops -->
-    <path d="M 506 126 L 518 126" stroke="#5A6675" stroke-width="1.5" marker-end="url(#arrow)"/>
-    <path d="M 676 126 L 688 126" stroke="#5A6675" stroke-width="1.5" marker-end="url(#arrow)"/>
+      <circle r="3" fill="#A78BFA">
+        <animateMotion dur="0.5s" repeatCount="indefinite" begin="0.9s"><mpath href="#hop1"/></animateMotion>
+      </circle>
+      <circle r="3" fill="#A78BFA">
+        <animateMotion dur="0.5s" repeatCount="indefinite" begin="1.6s"><mpath href="#hop2"/></animateMotion>
+      </circle>
+
+      <circle r="3.5" fill="#F472B6">
+        <animateMotion dur="2.2s" repeatCount="indefinite" begin="1.1s"><mpath href="#outTop"/></animateMotion>
+        <animate attributeName="opacity" values="0;1;1;0" dur="2.2s" repeatCount="indefinite" begin="1.1s"/>
+      </circle>
+      <circle r="3.5" fill="#F472B6">
+        <animateMotion dur="2.2s" repeatCount="indefinite" begin="1.8s"><mpath href="#outMid"/></animateMotion>
+        <animate attributeName="opacity" values="0;1;1;0" dur="2.2s" repeatCount="indefinite" begin="1.8s"/>
+      </circle>
+      <circle r="3.5" fill="#F472B6">
+        <animateMotion dur="2.2s" repeatCount="indefinite" begin="0.4s"><mpath href="#outLow"/></animateMotion>
+        <animate attributeName="opacity" values="0;1;1;0" dur="2.2s" repeatCount="indefinite" begin="0.4s"/>
+      </circle>
+    </g>
 
     <text x="600" y="292" font-size="12" fill="#5A6675" text-anchor="middle">
       Same shape in every project here — what changes is what sits in the middle.

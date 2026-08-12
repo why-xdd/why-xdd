@@ -9,9 +9,35 @@
       <stop offset="82%"  stop-color="#F472B6" stop-opacity="0.55"/>
       <stop offset="100%" stop-color="#F472B6" stop-opacity="0"/>
     </linearGradient>
+
+    <linearGradient id="sweep" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#E6EDF3" stop-opacity="0"/>
+      <stop offset="50%"  stop-color="#E6EDF3" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#E6EDF3" stop-opacity="0"/>
+    </linearGradient>
   </defs>
 
+  <style>
+    /* One traversal every eight seconds: present enough to notice on the way
+       past, rare enough that six dividers on one page do not strobe. */
+    .sweep { animation: travel 8s linear infinite; }
+    @keyframes travel {
+      from { transform: translateX(-220px); }
+      to   { transform: translateX(1200px); }
+    }
+    .node { animation: breathe 8s ease-in-out infinite; }
+    @keyframes breathe {
+      0%, 100% { r: 3.5; opacity: 1;   }
+      50%      { r: 4.5; opacity: 0.7; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .sweep { display: none; }
+      .node  { animation: none; }
+    }
+  </style>
+
   <rect x="0" y="11" width="1200" height="1.5" fill="url(#rule)"/>
-  <circle cx="600" cy="12" r="3.5" fill="#7C7CE0"/>
+  <rect class="sweep" x="0" y="10.5" width="220" height="2.5" rx="1.25" fill="url(#sweep)"/>
+  <circle class="node" cx="600" cy="12" r="3.5" fill="#7C7CE0"/>
   <circle cx="600" cy="12" r="7" fill="none" stroke="#7C7CE0" stroke-opacity="0.35"/>
 </svg>

@@ -13,20 +13,50 @@
     </radialGradient>
   </defs>
 
+  <style>
+    /* The stroke draws itself once on load, then stays. A mark that redraws
+       forever competes with the text beside it for attention it does not need. */
+    /* Resting state is the finished mark. The draw-in is an enhancement that
+       borrows the hidden state for its own duration and hands it back. */
+    .stroke {
+      stroke-dasharray: 460;
+      stroke-dashoffset: 0;
+      animation: draw 1.8s cubic-bezier(.65,0,.35,1) .2s backwards;
+    }
+    @keyframes draw { from { stroke-dashoffset: 460; } }
+
+    .node { opacity: 1; animation: land .5s ease-out backwards; }
+    .n1 { animation-delay: .7s; } .n2 { animation-delay: 1.3s; } .n3 { animation-delay: 1.8s; }
+    @keyframes land {
+      from { opacity: 0; transform: scale(0.2); }
+    }
+
+    .halo { animation: breathe 6s ease-in-out infinite; transform-origin: 130px 130px; }
+    @keyframes breathe {
+      0%, 100% { opacity: .9; transform: scale(1);    }
+      50%      { opacity: 1;  transform: scale(1.06); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .stroke { stroke-dashoffset: 0; animation: none; }
+      .node   { opacity: 1; animation: none; }
+      .halo   { animation: none; }
+    }
+  </style>
+
   <rect width="260" height="260" rx="28" fill="#0D1117" stroke="#1F2833" stroke-width="2"/>
-  <circle cx="130" cy="130" r="110" fill="url(#mgGlow)"/>
+  <circle class="halo" cx="130" cy="130" r="110" fill="url(#mgGlow)"/>
 
   <!-- The W is drawn as a waveform rather than lettered: it says his initial
        and what he works on at the same time. -->
-  <path d="M 44 92 L 74 168 L 104 112 L 130 178 L 156 112 L 186 168 L 216 92"
+  <path class="stroke" d="M 44 92 L 74 168 L 104 112 L 130 178 L 156 112 L 186 168 L 216 92"
         fill="none" stroke="url(#mg)" stroke-width="11"
         stroke-linecap="round" stroke-linejoin="round"/>
 
-  <!-- Sampling points, the other half of the metaphor. -->
   <g fill="#0D1117" stroke="url(#mg)" stroke-width="3">
-    <circle cx="44"  cy="92"  r="5"/>
-    <circle cx="130" cy="178" r="5"/>
-    <circle cx="216" cy="92"  r="5"/>
+    <circle class="node n1" cx="44"  cy="92"  r="5" style="transform-box: fill-box; transform-origin: center;"/>
+    <circle class="node n2" cx="130" cy="178" r="5" style="transform-box: fill-box; transform-origin: center;"/>
+    <circle class="node n3" cx="216" cy="92"  r="5" style="transform-box: fill-box; transform-origin: center;"/>
   </g>
 
   <text x="130" y="222" text-anchor="middle"
