@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" width="1200" height="120" role="presentation" aria-hidden="true">
+  <defs>
+    <linearGradient id="fWave" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#22D3EE" stop-opacity="0.5"/>
+      <stop offset="50%"  stop-color="#7C7CE0" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#F472B6" stop-opacity="0.45"/>
+    </linearGradient>
+    <linearGradient id="fWave2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#7C7CE0" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#22D3EE" stop-opacity="0.18"/>
+    </linearGradient>
+    <clipPath id="fClip"><rect x="0" y="0" width="1200" height="120" rx="16"/></clipPath>
+  </defs>
+
+  <style>
+    /* Two waves at different speeds, each drawn twice end to end and slid by
+       exactly one copy's width. The bookend to the header's signal: the page
+       opens on a waveform and closes on one, moving the other way. */
+    .w1 { animation: drift1 11s linear infinite; }
+    .w2 { animation: drift2 17s linear infinite; }
+    @keyframes drift1 { from { transform: translateX(0); } to { transform: translateX(-600px); } }
+    @keyframes drift2 { from { transform: translateX(-600px); } to { transform: translateX(0); } }
+
+    @media (prefers-reduced-motion: reduce) { .w1, .w2 { animation: none; } }
+  </style>
+
+  <g clip-path="url(#fClip)">
+    <rect width="1200" height="120" fill="#0D1117"/>
+
+    <g class="w2">
+      <path fill="url(#fWave2)" d="M0,74 C100,58 200,92 300,74 S500,58 600,74 S800,92 900,74 S1100,58 1200,74
+                                   S1400,92 1500,74 S1700,58 1800,74 L1800,120 L0,120 Z"/>
+    </g>
+    <g class="w1">
+      <path fill="url(#fWave)" d="M0,86 C 75,70 150,102 225,86 S375,70 450,86 S600,102 675,86 S825,70 900,86
+                                  S1050,102 1125,86 S1275,70 1350,86 S1500,102 1575,86 S1725,70 1800,86
+                                  L1800,120 L0,120 Z"/>
+    </g>
+
+    <rect x="0" y="0" width="1200" height="120" rx="16" fill="none" stroke="#1F2833" stroke-width="2"/>
+  </g>
+</svg>

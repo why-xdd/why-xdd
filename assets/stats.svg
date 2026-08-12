@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 210" width="1200" height="210" role="img" aria-label="Across six repositories: 229 tests, all green; 8741 lines of source and 2725 of tests; Python 62 percent, TypeScript 22, Go 14.">
+  <title>What the six repositories add up to</title>
+
+  <defs>
+    <linearGradient id="pyBar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#3776AB"/><stop offset="100%" stop-color="#5A9BD4"/>
+    </linearGradient>
+    <linearGradient id="tsBar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#2A5E9E"/><stop offset="100%" stop-color="#3178C6"/>
+    </linearGradient>
+    <linearGradient id="goBar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00758F"/><stop offset="100%" stop-color="#00ADD8"/>
+    </linearGradient>
+    <pattern id="statDots" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="1.2" cy="1.2" r="1.2" fill="#1F2833"/>
+    </pattern>
+  </defs>
+
+  <style>
+    /* Bars grow from the left once, on load, and stay. This panel is read, not
+       watched — a value that keeps re-animating is harder to compare against
+       its neighbour, which is the entire job here. */
+    .grow {
+      transform-box: fill-box; transform-origin: left center;
+      animation: grow 1.1s cubic-bezier(.16,1,.3,1) backwards;
+    }
+    @keyframes grow { from { transform: scaleX(0); } }
+
+    .g2 { animation-delay: .08s; } .g3 { animation-delay: .16s; }
+    .g4 { animation-delay: .24s; } .g5 { animation-delay: .32s; } .g6 { animation-delay: .4s; }
+
+    .tick { animation: pop .5s cubic-bezier(.16,1,.3,1) .9s backwards; }
+    @keyframes pop { from { opacity: 0; transform: scale(.4); } }
+
+    @media (prefers-reduced-motion: reduce) {
+      .grow, .tick { animation: none; }
+    }
+  </style>
+
+  <rect width="1200" height="210" rx="16" fill="#0D1117"/>
+  <rect width="1200" height="210" rx="16" fill="url(#statDots)"/>
+
+  <g font-family="ui-monospace, 'SF Mono', 'JetBrains Mono', Menlo, Consolas, monospace">
+
+    <!-- Headline counts. Measured, not estimated: the test numbers are what the
+         suites report and the line counts are wc over source, excluding tests. -->
+    <g>
+      <text x="40" y="44" font-size="10" fill="#5A6675" letter-spacing="2">REPOSITORIES</text>
+      <text x="40" y="80" font-size="34" font-weight="700" fill="#E6EDF3">6</text>
+
+      <text x="150" y="44" font-size="10" fill="#5A6675" letter-spacing="2">TESTS</text>
+      <text x="150" y="80" font-size="34" font-weight="700" fill="#34D399">229</text>
+      <g class="tick">
+        <circle cx="243" cy="70" r="9" fill="#34D399" fill-opacity="0.14" stroke="#34D399"/>
+        <path d="M 239 70 l 3 3.5 l 6 -7" fill="none" stroke="#34D399" stroke-width="1.8"
+              stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+
+      <text x="292" y="44" font-size="10" fill="#5A6675" letter-spacing="2">LINES OF SOURCE</text>
+      <text x="292" y="80" font-size="34" font-weight="700" fill="#E6EDF3">8<tspan dx="-14">741</tspan></text>
+
+      <text x="452" y="44" font-size="10" fill="#5A6675" letter-spacing="2">OF TESTS</text>
+      <text x="452" y="80" font-size="34" font-weight="700" fill="#A78BFA">2<tspan dx="-14">725</tspan></text>
+
+      <text x="612" y="44" font-size="10" fill="#5A6675" letter-spacing="2">BUGS TESTS CAUGHT</text>
+      <text x="612" y="80" font-size="34" font-weight="700" fill="#F87171">7</text>
+    </g>
+
+    <!-- Tests per repository. Ordered by count so the shape reads without
+         needing the axis labelled. -->
+    <text x="40" y="122" font-size="10" fill="#5A6675" letter-spacing="2">TESTS PER REPOSITORY</text>
+    <g font-size="10">
+      <text x="40" y="146" fill="#8B98A8">inferkit</text>
+      <rect class="grow"    x="118" y="138" width="212" height="9" rx="4.5" fill="#22D3EE"/>
+      <text x="340" y="146" fill="#5A6675">53</text>
+
+      <text x="40" y="164" fill="#8B98A8">voicedata</text>
+      <rect class="grow g2" x="118" y="156" width="192" height="9" rx="4.5" fill="#F472B6"/>
+      <text x="340" y="164" fill="#5A6675">48</text>
+
+      <text x="40" y="182" fill="#8B98A8">queueviz</text>
+      <rect class="grow g3" x="118" y="174" width="160" height="9" rx="4.5" fill="#34D399"/>
+      <text x="340" y="182" fill="#5A6675">40</text>
+
+      <text x="392" y="146" fill="#8B98A8">slowq</text>
+      <rect class="grow g4" x="470" y="138" width="140" height="9" rx="4.5" fill="#00ADD8"/>
+      <text x="620" y="146" fill="#5A6675">35</text>
+
+      <text x="392" y="164" fill="#8B98A8">askdocs</text>
+      <rect class="grow g5" x="470" y="156" width="116" height="9" rx="4.5" fill="#A78BFA"/>
+      <text x="620" y="164" fill="#5A6675">29</text>
+
+      <text x="392" y="182" fill="#8B98A8">botkit</text>
+      <rect class="grow g6" x="470" y="174" width="96" height="9" rx="4.5" fill="#2CA5E0"/>
+      <text x="620" y="182" fill="#5A6675">24</text>
+    </g>
+
+    <!-- Language share, by lines of source across all six. -->
+    <text x="712" y="122" font-size="10" fill="#5A6675" letter-spacing="2">LANGUAGE SHARE</text>
+    <g>
+      <rect class="grow"    x="712" y="136" width="277" height="14" rx="7" fill="url(#pyBar)"/>
+      <rect class="grow g2" x="993" y="136" width="98"  height="14" rx="7" fill="url(#tsBar)"/>
+      <rect class="grow g3" x="1095" y="136" width="63" height="14" rx="7" fill="url(#goBar)"/>
+
+      <g font-size="10.5">
+        <circle cx="717" cy="169" r="4" fill="#3776AB"/>
+        <text x="728" y="173" fill="#8B98A8">Python <tspan fill="#5A6675">62%</tspan></text>
+
+        <circle cx="828" cy="169" r="4" fill="#3178C6"/>
+        <text x="839" y="173" fill="#8B98A8">TypeScript <tspan fill="#5A6675">22%</tspan></text>
+
+        <circle cx="965" cy="169" r="4" fill="#00ADD8"/>
+        <text x="976" y="173" fill="#8B98A8">Go <tspan fill="#5A6675">14%</tspan></text>
+      </g>
+
+      <text x="712" y="196" font-size="9.5" fill="#3D4956">by lines of source across the six repositories, tests excluded</text>
+    </g>
+  </g>
+
+  <rect x="0" y="0" width="1200" height="210" rx="16" fill="none" stroke="#1F2833" stroke-width="2"/>
+</svg>

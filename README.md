@@ -69,7 +69,9 @@ and an async, typed application layer in between with its instrumentation undern
 <tr>
 <td width="50%" valign="top">
 
-<a href="https://github.com/why-xdd/inferkit"><img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/card-inferkit.svg" alt="inferkit — batched, cached, canary-routed model serving. 16× throughput."/></a>
+<a href="https://github.com/why-xdd/inferkit"><img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/shot-inferkit.png" alt="inferkit benchmark output: 212 requests per second without batching, 3470 with it, 10076 with batching and cache"/></a>
+
+<img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/card-inferkit.svg" alt="inferkit — scattered requests collapsing into one batch, 16 times the throughput"/>
 
 #### [`⬢` inferkit](https://github.com/why-xdd/inferkit)
 
@@ -77,13 +79,15 @@ The serving layer around a model you already have. Dynamic batching, result
 caching keyed on model *version*, canary routing that rolls itself back when a
 candidate exceeds its error budget.
 
-**16× throughput and 13× lower p99** in a benchmark you can re-run — the README
-prints the command.
+**16× throughput and 13× lower p99** — the screenshot is the benchmark run,
+and the command that produced it is in the README.
 
 </td>
 <td width="50%" valign="top">
 
-<a href="https://github.com/why-xdd/voicedata"><img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/card-voicedata.svg" alt="voicedata — prepare and audit speech datasets."/></a>
+<a href="https://github.com/why-xdd/voicedata"><img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/shot-voicedata.png" alt="voicedata report: five files audited, three pass, one clipped recording fails, one mostly-silence clip warns, each with its reason"/></a>
+
+<img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/card-voicedata.svg" alt="voicedata — a waveform being cut on its silences, normalised to −23 LUFS"/>
 
 #### [`⬢` voicedata](https://github.com/why-xdd/voicedata)
 
@@ -98,26 +102,30 @@ Near-duplicates are found by how a clip *sounds*, so a re-encode still matches.
 <tr>
 <td width="50%" valign="top">
 
-<a href="https://github.com/why-xdd/askdocs"><img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/card-askdocs.svg" alt="askdocs — local hybrid retrieval with a measured eval."/></a>
+<a href="https://github.com/why-xdd/askdocs"><img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/shot-askdocs.png" alt="askdocs eval: lexical 88 percent at MRR 0.724, dense 94 at 0.731, hybrid 94 at 0.809"/></a>
+
+<img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/card-askdocs.svg" alt="askdocs — two rankings feeding a fusion box, then the merged list"/>
 
 #### [`⬢` askdocs](https://github.com/why-xdd/askdocs)
 
 Ask your own documents, locally. BM25 and vectors fused by reciprocal rank, so
 it finds both `PAY_1004` and *"what happens when I reuse an idempotency key"*.
 
-Ships `askdocs eval`, because "hybrid retrieval helps" is a claim, and the
-numbers in the README are the measurement — including where it only ties.
+Ships `askdocs eval`, because "hybrid retrieval helps" is a claim — the
+screenshot is the measurement, including where it only ties.
 
 </td>
 <td width="50%" valign="top">
 
-<a href="https://github.com/why-xdd/slowq"><img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/card-slowq.svg" alt="slowq — rank Postgres queries by the time they actually cost."/></a>
+<a href="https://github.com/why-xdd/slowq"><img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/shot-slowq.png" alt="slowq output: a 0.81 millisecond query taking 64 percent of all execution time, ranked above an 8.6 second report at 18 percent"/></a>
+
+<img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/card-slowq.svg" alt="slowq — ranked by total time, the dominant bar being a fast query called constantly"/>
 
 #### [`⬢` slowq](https://github.com/why-xdd/slowq)
 
 One static Go binary over `pg_stat_statements`. Ranks by **total** time, because
 the query worth fixing is almost never the slowest one — it is the 0.8 ms query
-called five million times.
+called five million times, which the screenshot puts at the top.
 
 Explains each finding, and proposes indexes with the columns in the right order.
 
@@ -126,7 +134,9 @@ Explains each finding, and proposes indexes with the columns in the right order.
 <tr>
 <td width="50%" valign="top">
 
-<a href="https://github.com/why-xdd/botkit"><img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/card-botkit.svg" alt="botkit — an aiogram 3 starter with the boring parts already correct."/></a>
+<a href="https://github.com/why-xdd/botkit"><img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/shot-botkit.png" alt="The botkit feedback flow: category buttons, the message prompt, a confirmation screen and the thank-you, with a cancel button at every step"/></a>
+
+<img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/card-botkit.svg" alt="botkit — three FSM states lighting in sequence, with the cancel route beneath"/>
 
 #### [`⬢` botkit](https://github.com/why-xdd/botkit)
 
@@ -134,12 +144,15 @@ The aiogram 3 starter I wish I had had: FSM forms you can cancel from any state,
 i18n resolved in middleware with a CI parity check, roles that compare rather
 than enumerate, and a broadcast paced under Telegram's rate limit.
 
-Middleware order is documented, because it is load-bearing.
+The conversation above is rendered from `locales/en.json`, so it cannot drift
+from what the bot sends.
 
 </td>
 <td width="50%" valign="top">
 
-<a href="https://queueviz.vercel.app"><img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/queueviz-demo.gif" alt="queueviz running at 150% offered load: three tenant lanes filling at different rates under weighted fair queueing"/></a>
+<a href="https://queueviz.vercel.app"><img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/queueviz-demo.gif" alt="queueviz at 150 percent offered load: three tenant lanes filling at different rates under weighted fair queueing"/></a>
+
+<img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/card-queueviz.svg" alt="queueviz — arrivals flowing through a queue into workers"/>
 
 #### [`⬢` queueviz](https://github.com/why-xdd/queueviz) &nbsp;·&nbsp; [**live →**](https://queueviz.vercel.app)
 
@@ -147,13 +160,19 @@ Queueing theory is taught as algebra and experienced as an outage. This is the
 same thing as a live simulation: watch a queue build at 95% load, then watch it
 *not* build once backpressure is on.
 
-Above: fair queueing at 150% load, recorded from the running page. Seven
-presets, zero runtime dependencies, 8.5 kB gzipped. **Live at
+Above: fair queueing at 150% load, recorded from the running page. Seven presets,
+zero runtime dependencies, 8.5 kB gzipped. **Live at
 [queueviz.vercel.app](https://queueviz.vercel.app)** — no install, no signup.
 
 </td>
 </tr>
 </table>
+
+<div align="center">
+
+<img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/stats.svg" alt="Across six repositories: 229 tests all green, 8741 lines of source and 2725 of tests, Python 62 percent, TypeScript 22, Go 14."/>
+
+</div>
 
 <img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/divider.svg" alt=""/>
 
@@ -259,3 +278,5 @@ Currently a CS student in Moscow, looking for a backend or ML internship.
 <sub><i>Every project above ships with tests and CI. 229 of them, at last count.</i></sub>
 
 </div>
+
+<img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/footer.svg" alt=""/>
