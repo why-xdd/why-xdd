@@ -65,108 +65,139 @@ and an async, typed application layer in between with its instrumentation undern
 
 <br/>
 
-<table>
-<tr>
-<td width="50%" valign="top">
+### [`⬢` inferkit](https://github.com/why-xdd/inferkit)
 
-<a href="https://github.com/why-xdd/inferkit"><img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/shot-inferkit.png" alt="inferkit benchmark output: 212 requests per second without batching, 3470 with it, 10076 with batching and cache"/></a>
+**The serving layer around a model you already have.**
+
+<a href="https://github.com/why-xdd/inferkit"><img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/shot-inferkit.png" alt="inferkit benchmark: 214 requests per second without batching, 3579 with it, 10598 with batching and cache; p99 falls from 304 ms to 21"/></a>
+
+<sub>The benchmark, on one laptop core. Same model, same 1200 requests: **214 → 3 579 requests per second**, and p99 from **304 ms to 21**.</sub>
+
+<a href="https://github.com/why-xdd/inferkit"><img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/shot-inferkit2.png" alt="The canary panel before and after: the candidate goes from 10 percent weight to zero, tripped, after nine failed requests"/></a>
+
+<sub>A candidate that raises on every call. Nine requests is all it takes: weight to zero, `tripped: true`, and every later request lands on the primary — no operator, no restart.</sub>
 
 <img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/card-inferkit.svg" alt="inferkit — scattered requests collapsing into one batch, 16 times the throughput"/>
 
-#### [`⬢` inferkit](https://github.com/why-xdd/inferkit)
+Dynamic batching, result caching keyed on the model *version*, and canary routing
+that rolls itself back the moment a candidate spends its error budget.
 
-The serving layer around a model you already have. Dynamic batching, result
-caching keyed on model *version*, canary routing that rolls itself back when a
-candidate exceeds its error budget.
+The batching window is measured from **now**, not from when the first request
+arrived — anchoring it to the oldest request is the bug that makes a batcher look
+like it works while giving you nothing. That one is written up in the README.
 
-**16× throughput and 13× lower p99** — the screenshot is the benchmark run,
-and the command that produced it is in the README.
+<img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/divider.svg" alt=""/>
 
-</td>
-<td width="50%" valign="top">
+### [`⬢` voicedata](https://github.com/why-xdd/voicedata)
 
-<a href="https://github.com/why-xdd/voicedata"><img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/shot-voicedata.png" alt="voicedata report: five files audited, three pass, one clipped recording fails, one mostly-silence clip warns, each with its reason"/></a>
+**Raw recordings in, a dataset you can actually train on out.**
+
+<a href="https://github.com/why-xdd/voicedata"><img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/shot-voicedata.png" alt="voicedata report: five files audited, three pass, a clipped phone recording fails and a mostly-silence room tone warns, each with its measurements"/></a>
+
+<sub>Five recordings audited. The clipped phone take fails, the room tone warns — each with the number that condemned it, not a bare verdict.</sub>
+
+<a href="https://github.com/why-xdd/voicedata"><img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/shot-voicedata2.png" alt="voicedata dedup: one duplicate group found, interview_02.wav kept, similarity 1.000"/></a>
+
+<sub>`interview_02_copy.wav` is a re-encode, so its bytes differ. It is caught anyway: clips are compared by a mel fingerprint — by how they *sound*.</sub>
 
 <img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/card-voicedata.svg" alt="voicedata — a waveform being cut on its silences, normalised to −23 LUFS"/>
 
-#### [`⬢` voicedata](https://github.com/why-xdd/voicedata)
+Resample, slice on speech, normalise to **ITU-R BS.1770-4** loudness with true-peak
+limiting, find the near-duplicates, and say plainly what is wrong with the rest.
 
-Raw recordings into a dataset you can train on: resample, slice on speech,
-normalise to **ITU-R BS.1770-4** loudness with true-peak limiting, find the
-duplicates, and say what is wrong with the rest.
+The loudness path is the standard one, built from the analog prototype filters and
+gated on 400 ms blocks, because a dataset normalised the naive way is quietly
+inconsistent in exactly the way that hurts training.
 
-Near-duplicates are found by how a clip *sounds*, so a re-encode still matches.
+<img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/divider.svg" alt=""/>
 
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
+### [`⬢` askdocs](https://github.com/why-xdd/askdocs)
 
-<a href="https://github.com/why-xdd/askdocs"><img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/shot-askdocs.png" alt="askdocs eval: lexical 88 percent at MRR 0.724, dense 94 at 0.731, hybrid 94 at 0.809"/></a>
+**Ask your own documents. Locally, with nothing leaving the machine.**
+
+<a href="https://github.com/why-xdd/askdocs"><img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/shot-askdocs.png" alt="askdocs eval: lexical 88 percent recall at MRR 0.724, dense 94 at 0.731, hybrid 94 at 0.809"/></a>
+
+<sub>The measurement, not the claim. **Hybrid ties dense on recall and wins on MRR** — the same answers, ranked higher, which is what survives a context window.</sub>
+
+<a href="https://github.com/why-xdd/askdocs"><img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/shot-askdocs2.png" alt="askdocs ask with ranks: onboarding.md is first at bm25 #2 and vector #1, while BM25's own top hit is pushed to second place"/></a>
+
+<sub>The question lexical search cannot do. BM25 put `deployment.md` first; the vector ranking knew better, and fusion moved `onboarding.md` to the top.</sub>
 
 <img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/card-askdocs.svg" alt="askdocs — two rankings feeding a fusion box, then the merged list"/>
 
-#### [`⬢` askdocs](https://github.com/why-xdd/askdocs)
+BM25 and embeddings fused by **reciprocal rank** — ranks, not scores, because BM25
+scores and cosine similarities are not on the same scale and their spread changes
+per query, so "0.6 lexical, 0.4 dense" describes nothing reproducible.
 
-Ask your own documents, locally. BM25 and vectors fused by reciprocal rank, so
-it finds both `PAY_1004` and *"what happens when I reuse an idempotency key"*.
+`askdocs eval` ships as a command so the claim can be checked on *your* corpus.
+An earlier README claimed 100% here; that number turned out to be a hashing bug,
+and the README now says so and reports the real one.
 
-Ships `askdocs eval`, because "hybrid retrieval helps" is a claim — the
-screenshot is the measurement, including where it only ties.
+<img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/divider.svg" alt=""/>
 
-</td>
-<td width="50%" valign="top">
+### [`⬢` slowq](https://github.com/why-xdd/slowq)
 
-<a href="https://github.com/why-xdd/slowq"><img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/shot-slowq.png" alt="slowq output: a 0.81 millisecond query taking 64 percent of all execution time, ranked above an 8.6 second report at 18 percent"/></a>
+**One static Go binary that reads `pg_stat_statements` and tells you where to start.**
+
+<a href="https://github.com/why-xdd/slowq"><img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/shot-slowq.png" alt="slowq output: a 0.81 millisecond query taking 64 percent of all execution time, ranked above an 8.6 second report, each finding explained with a suggested index"/></a>
+
+<sub>Ranked by **total** time. The query at the top runs in 0.81 ms — and accounts for **64% of everything the database does**, because it runs 4.8 million times.</sub>
 
 <img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/card-slowq.svg" alt="slowq — ranked by total time, the dominant bar being a fast query called constantly"/>
 
-#### [`⬢` slowq](https://github.com/why-xdd/slowq)
+The query worth fixing is almost never the slowest one, and every tool that sorts by
+mean duration hides it. Each finding is explained in a sentence you could paste into
+a ticket, and index suggestions put equality predicates first and the `ORDER BY`
+column last, so the B-tree can seek and the sort comes free.
 
-One static Go binary over `pg_stat_statements`. Ranks by **total** time, because
-the query worth fixing is almost never the slowest one — it is the 0.8 ms query
-called five million times, which the screenshot puts at the top.
+Reads a live database or a JSON snapshot, so it also works where you cannot connect.
 
-Explains each finding, and proposes indexes with the columns in the right order.
+<img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/divider.svg" alt=""/>
 
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
+### [`⬢` botkit](https://github.com/why-xdd/botkit)
+
+**The aiogram 3 starter I wish I had had.**
 
 <a href="https://github.com/why-xdd/botkit"><img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/shot-botkit.png" alt="The botkit feedback flow: category buttons, the message prompt, a confirmation screen and the thank-you, with a cancel button at every step"/></a>
 
+<sub>A form with a way out of every state, including the confirmation — the state that starters usually forget.</sub>
+
+<a href="https://github.com/why-xdd/botkit"><img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/shot-botkit2.png" alt="The botkit admin panel: role counts, a broadcast preview naming the audience size, and a delivery report of delivered, blocked and failed"/></a>
+
+<sub>The admin side: roles that compare rather than enumerate, and a broadcast that previews before it sends, paces itself under Telegram's rate limit, and reports what actually landed.</sub>
+
 <img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/card-botkit.svg" alt="botkit — three FSM states lighting in sequence, with the cancel route beneath"/>
 
-#### [`⬢` botkit](https://github.com/why-xdd/botkit)
+FSM forms, i18n resolved in middleware with a CI check that the locale files stay in
+parity, role checks that compare rank instead of listing every role, and a broadcast
+that survives contact with Telegram's limits.
 
-The aiogram 3 starter I wish I had had: FSM forms you can cancel from any state,
-i18n resolved in middleware with a CI parity check, roles that compare rather
-than enumerate, and a broadcast paced under Telegram's rate limit.
+Both screenshots are rendered from `locales/en.json` at build time, so the pictures
+cannot drift from the strings the bot actually sends.
 
-The conversation above is rendered from `locales/en.json`, so it cannot drift
-from what the bot sends.
+<img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/divider.svg" alt=""/>
 
-</td>
-<td width="50%" valign="top">
+### [`⬢` queueviz](https://github.com/why-xdd/queueviz) &nbsp;·&nbsp; [**queueviz.vercel.app →**](https://queueviz.vercel.app)
 
-<a href="https://queueviz.vercel.app"><img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/queueviz-demo.gif" alt="queueviz at 150 percent offered load: three tenant lanes filling at different rates under weighted fair queueing"/></a>
+**Queueing theory is taught as algebra and experienced as an outage.**
+
+<a href="https://queueviz.vercel.app"><img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/queueviz-demo.gif" alt="queueviz at 150 percent offered load: three tenant lanes filling at different rates under weighted fair queueing, p99 latency passing 45 seconds"/></a>
+
+<sub>Weighted fair queueing at **150% offered load**, recorded from the live page. Three tenants, three lanes — the one flooding grows its own queue and not the others'.</sub>
+
+<a href="https://queueviz.vercel.app"><img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/queueviz-still.png" alt="queueviz at 90 percent load: queue depth 13, p50 777 milliseconds, p99 1.49 seconds"/></a>
+
+<sub>And the knee. At **90% load nothing is "overloaded"** — yet p99 is already twice p50 and climbing. This is the curve capacity plans are written straight past.</sub>
 
 <img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/card-queueviz.svg" alt="queueviz — arrivals flowing through a queue into workers"/>
 
-#### [`⬢` queueviz](https://github.com/why-xdd/queueviz) &nbsp;·&nbsp; [**live →**](https://queueviz.vercel.app)
+A live simulation you can push around: seven presets, four queue disciplines, four
+admission-control strategies. Watch a queue build at 95% load, then watch it *not*
+build once backpressure is on.
 
-Queueing theory is taught as algebra and experienced as an outage. This is the
-same thing as a live simulation: watch a queue build at 95% load, then watch it
-*not* build once backpressure is on.
-
-Above: fair queueing at 150% load, recorded from the running page. Seven presets,
-zero runtime dependencies, 8.5 kB gzipped. **Live at
-[queueviz.vercel.app](https://queueviz.vercel.app)** — no install, no signup.
-
-</td>
-</tr>
-</table>
+**8.5 kB gzipped, zero runtime dependencies, no framework.** Every run is seeded, so
+the same settings always produce the same trace and two people can argue about the
+same picture. No install, no signup — the link above is the whole product.
 
 <div align="center">
 
@@ -184,9 +215,7 @@ zero runtime dependencies, 8.5 kB gzipped. **Live at
 
 #### [`⬢` VoxShift](https://github.com/why-xdd/voxshift)
 
-Real-time voice changer: phase-vocoder pitch shifting, effect presets, VU
-meters, and virtual-mic output through VB-Cable so the changed voice works in
-Discord and games.
+Real-time voice changer: phase-vocoder pitch shifting, effect presets, VU meters, and virtual-mic output through VB-Cable so the changed voice works in Discord and games.
 
 <img src="https://skillicons.dev/icons?i=python&theme=dark" height="28" alt="Python"/>
 
@@ -195,9 +224,7 @@ Discord and games.
 
 #### `⬢` FriendCards &nbsp;<sub>private · in production</sub>
 
-A collectible-card Telegram bot with an in-game economy, trading, mini-games, an
-admin panel and a WebApp frontend. Deployed on a VPS with live users and
-zero-downtime schema migrations.
+A collectible-card Telegram bot with an in-game economy, trading, mini-games, an admin panel and a WebApp frontend. Deployed on a VPS with live users and zero-downtime schema migrations.
 
 Source stays private; happy to walk through the architecture.
 
