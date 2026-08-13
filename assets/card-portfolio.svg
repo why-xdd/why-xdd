@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 200" width="580" height="200" role="img" aria-label="artem-portfolio — a personal site built as a broadcast teletext service: a page arriving row by row on a character grid, and the eight colours the medium allowed.">
+  <title>artem-portfolio</title>
+
+  <style>
+    /* A broadcast page did not fade in, it arrived a row at a time. Steps,
+       not easing, and the same order every cycle. */
+    .row { animation: land 5s steps(1, end) infinite; }
+    @keyframes land {
+      0%, 8%    { opacity: 0; }
+      12%, 100% { opacity: 1; }
+    }
+    .r2 { animation-delay: .18s; } .r3 { animation-delay: .36s; }
+    .r4 { animation-delay: .54s; } .r5 { animation-delay: .72s; }
+
+    /* The keyed page number counts up in the corner while the page loads. */
+    .keyed { animation: key 5s steps(1, end) infinite; }
+    @keyframes key { 0%, 10% { opacity: 1; } 11%, 100% { opacity: 0; } }
+    .settled { animation: settle 5s steps(1, end) infinite; }
+    @keyframes settle { 0%, 10% { opacity: 0; } 11%, 100% { opacity: 1; } }
+
+    @media (prefers-reduced-motion: reduce) {
+      .row, .keyed, .settled { animation: none; }
+      .keyed { opacity: 0; }
+    }
+  </style>
+
+  <defs>
+    <radialGradient id="ttGlow" cx="18%" cy="20%" r="72%">
+      <stop offset="0%" stop-color="#FFFF00" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#FFFF00" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="580" height="200" rx="12" fill="#11161D" stroke="#1F2833" stroke-width="2"/>
+  <rect width="580" height="200" rx="12" fill="url(#ttGlow)"/>
+  <rect x="0" y="0" width="4" height="200" rx="2" fill="#FFFF00"/>
+
+  <g font-family="ui-monospace, 'SF Mono', 'JetBrains Mono', Menlo, Consolas, monospace">
+    <text x="28" y="42" font-size="19" font-weight="700" fill="#E6EDF3">artem-portfolio</text>
+    <rect x="206" y="26" width="62" height="20" rx="10" fill="#61DAFB" fill-opacity="0.14" stroke="#2D7D96"/>
+    <text x="237" y="40" font-size="10" fill="#61DAFB" text-anchor="middle">React</text>
+    <rect x="274" y="26" width="72" height="20" rx="10" fill="#A78BFA" fill-opacity="0.14" stroke="#6D5BB5"/>
+    <text x="310" y="40" font-size="10" fill="#A78BFA" text-anchor="middle">Three.js</text>
+
+    <text x="28" y="70" font-size="12.5" fill="#8B98A8">A personal site as a broadcast teletext service.</text>
+    <text x="28" y="90" font-size="12.5" fill="#8B98A8">Key three digits and the page changes.</text>
+
+    <!-- The medium, in miniature: a page landing row by row on a character
+         grid, and the four coloured keys along the bottom. -->
+    <g transform="translate(28 104)">
+      <rect x="0" y="0" width="236" height="80" rx="4" fill="#000000" stroke="#1F2833"/>
+
+      <text x="8" y="14" font-size="8" fill="#FFFF00">P100</text>
+      <text class="keyed" x="212" y="14" font-size="8" fill="#FFFF00" text-anchor="end">1--</text>
+      <text class="settled" x="212" y="14" font-size="8" fill="#FFFFFF" text-anchor="end">100</text>
+
+      <g class="row">
+        <rect x="8" y="22" width="8" height="9" fill="#FFFF00"/>
+        <rect x="19" y="22" width="8" height="9" fill="#FFFF00"/>
+        <rect x="30" y="22" width="8" height="9" fill="#FFFF00"/>
+        <rect x="41" y="22" width="8" height="9" fill="#FFFF00"/>
+        <rect x="52" y="22" width="8" height="9" fill="#FFFF00"/>
+        <rect x="74" y="22" width="8" height="9" fill="#FFFF00"/>
+        <rect x="85" y="22" width="8" height="9" fill="#FFFF00"/>
+        <rect x="96" y="22" width="8" height="9" fill="#FFFF00"/>
+      </g>
+      <g class="row r2">
+        <rect x="8" y="36" width="126" height="5" fill="#E6EDF3"/>
+        <rect x="140" y="36" width="52" height="5" fill="#E6EDF3"/>
+      </g>
+      <g class="row r3">
+        <rect x="8" y="45" width="88" height="5" fill="#E6EDF3"/>
+        <rect x="102" y="45" width="74" height="5" fill="#E6EDF3"/>
+      </g>
+      <g class="row r4">
+        <rect x="8" y="56" width="150" height="10" fill="#FF0000"/>
+        <text x="14" y="64" font-size="7" fill="#000000">0.81 MS = 64%</text>
+      </g>
+
+      <g class="row r5">
+        <rect x="8" y="70" width="53" height="6" fill="#00FFFF"/>
+        <rect x="65" y="70" width="53" height="6" fill="#00FF00"/>
+        <rect x="122" y="70" width="53" height="6" fill="#FFFF00"/>
+        <rect x="179" y="70" width="49" height="6" fill="#FF0000"/>
+      </g>
+    </g>
+
+    <!-- Everything above is drawn from these, and nothing else. -->
+    <g transform="translate(292 110)">
+      <text x="0" y="8" font-size="9" fill="#5A6675">THREE BITS OF COLOUR</text>
+      <g>
+        <rect x="0"   y="18" width="30" height="18" fill="#000000" stroke="#1F2833"/>
+        <rect x="33"  y="18" width="30" height="18" fill="#FF0000"/>
+        <rect x="66"  y="18" width="30" height="18" fill="#00FF00"/>
+        <rect x="99"  y="18" width="30" height="18" fill="#FFFF00"/>
+        <rect x="132" y="18" width="30" height="18" fill="#0000FF"/>
+        <rect x="165" y="18" width="30" height="18" fill="#FF00FF"/>
+        <rect x="198" y="18" width="30" height="18" fill="#00FFFF"/>
+        <rect x="231" y="18" width="30" height="18" fill="#FFFFFF"/>
+      </g>
+      <text x="0" y="54" font-size="9.5" fill="#8B98A8">40 columns. No gradient, no blur,</text>
+      <text x="0" y="68" font-size="9.5" fill="#8B98A8">no shadow. The avatar is built in</text>
+      <text x="0" y="82" font-size="9.5" fill="#8B98A8">code and quantised to these eight.</text>
+    </g>
+  </g>
+</svg>

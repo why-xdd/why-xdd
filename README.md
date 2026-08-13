@@ -4,6 +4,7 @@
 
 <br/>
 
+<a href="https://artem-portfolio-mocha.vercel.app"><img src="https://img.shields.io/badge/site-artem--portfolio.vercel.app-FFFF00?style=flat-square&logo=vercel&logoColor=black&labelColor=0D1117" alt="personal site"/></a>
 <a href="mailto:why.not.live.alone@gmail.com"><img src="https://img.shields.io/badge/email-why.not.live.alone%40gmail.com-EA4335?style=flat-square&logo=gmail&logoColor=white&labelColor=0D1117" alt="email"/></a>
 <a href="https://github.com/why-xdd?tab=repositories"><img src="https://img.shields.io/badge/repositories-7C7CE0?style=flat-square&logo=github&logoColor=white&labelColor=0D1117" alt="repositories"/></a>
 <img src="https://img.shields.io/badge/open%20to-internships-34D399?style=flat-square&labelColor=0D1117" alt="open to internships"/>
@@ -199,9 +200,33 @@ build once backpressure is on.
 the same settings always produce the same trace and two people can argue about the
 same picture. No install, no signup — the link above is the whole product.
 
+<img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/divider.svg" alt=""/>
+
+### [`⬢` artem-portfolio](https://github.com/why-xdd/artem-portfolio) &nbsp;·&nbsp; [**artem-portfolio-mocha.vercel.app →**](https://artem-portfolio-mocha.vercel.app)
+
+**This profile, rebuilt as a broadcast teletext service.**
+
+<a href="https://artem-portfolio-mocha.vercel.app"><img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/shot-portfolio.png" alt="The site's front page: a mosaic headline reading OPEN ANY CLAIM I MAKE, a block-mosaic avatar, and the coloured FASTEXT bar along the bottom"/></a>
+
+<sub>Page 100. The avatar is a three.js scene rendered at fifty-four cells across and snapped to the eight colours the medium allowed — not a photograph, and not a sprite.</sub>
+
+<a href="https://artem-portfolio-mocha.vercel.app/#204"><img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/shot-portfolio2.png" alt="Page 204: the slowq work page, with its figures ruled in cyan and the real terminal capture held in an off-air window"/></a>
+
+<sub>Every work has its own three-digit page. **Key 204 on the keyboard** and you land here — the numbers are the navigation, the way they were.</sub>
+
+<img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/card-portfolio.svg" alt="artem-portfolio — a teletext page arriving row by row, and the eight colours the medium allowed"/>
+
+Forty columns, eight colours, no gradient and no blur anywhere in the build. The
+display lettering is a 5×7 alphabet authored in the repository and drawn as
+rectangles, because scaling a webfont up produces curves the medium could not make.
+
+The captures inside the off-air windows are the same real output the READMEs above
+carry, re-typeset in those eight colours. **REVEAL** on the front page swaps the
+mosaic for the raw 3D model underneath it.
+
 <div align="center">
 
-<img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/stats.svg" alt="Across six repositories: 229 tests all green, 8741 lines of source and 2725 of tests, Python 62 percent, TypeScript 22, Go 14."/>
+<img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/stats.svg" alt="Across the six tools: 229 tests all green, 8741 lines of source and 2725 of tests, Python 62 percent, TypeScript 22, Go 14."/>
 
 </div>
 
@@ -298,11 +323,12 @@ Source stays private; happy to walk through the architecture.
 Currently a CS student in Moscow, looking for a backend or ML internship.
 
 <a href="mailto:why.not.live.alone@gmail.com"><img src="https://img.shields.io/badge/why.not.live.alone@gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white&labelColor=0D1117" alt="email"/></a>
+<a href="https://artem-portfolio-mocha.vercel.app"><img src="https://img.shields.io/badge/the_site-FFFF00?style=for-the-badge&logo=vercel&logoColor=black&labelColor=0D1117" alt="personal site"/></a>
 <a href="https://github.com/why-xdd"><img src="https://img.shields.io/badge/why--xdd-181717?style=for-the-badge&logo=github&logoColor=white&labelColor=0D1117" alt="GitHub"/></a>
 
 <br/><br/>
 
-<sub><i>Every project above ships with tests and CI. 229 of them, at last count.</i></sub>
+<sub><i>The six tools above ship with tests and CI. 229 of them, at last count.</i></sub>
 
 </div>
 
