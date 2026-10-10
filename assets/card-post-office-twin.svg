@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 200" width="580" height="200" role="img" aria-label="post-office-twin — a post office floor plan that checks itself against five building codes. On the customer's file: 11 problems down to 2, the clear path from the entrance from 0.74 to 1.89 metres against a 1.8 metre norm.">
+  <title>post-office-twin</title>
+
+  <style>
+    /* Both bars move at once: the problems shrink while the path widens past
+       the norm line. The norm line itself never moves. */
+    .shrink { transform-box: fill-box; transform-origin: left center; animation: shrink 4.4s cubic-bezier(.16,1,.3,1) infinite; }
+    .widen  { transform-box: fill-box; transform-origin: left center; animation: widen 4.4s cubic-bezier(.16,1,.3,1) infinite; }
+    @keyframes shrink {
+      0%, 12%  { transform: scaleX(1); }
+      42%, 86% { transform: scaleX(0.182); }
+      100%     { transform: scaleX(1); }
+    }
+    @keyframes widen {
+      0%, 12%  { transform: scaleX(0.392); }
+      42%, 86% { transform: scaleX(1); }
+      100%     { transform: scaleX(0.392); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .shrink { animation: none; transform: scaleX(0.182); }
+      .widen  { animation: none; }
+    }
+  </style>
+  <defs>
+    <radialGradient id="potGlow" cx="80%" cy="20%" r="70%">
+      <stop offset="0%" stop-color="#C9A227" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#C9A227" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="580" height="200" rx="12" fill="#11161D" stroke="#1F2833" stroke-width="2"/>
+  <rect width="580" height="200" rx="12" fill="url(#potGlow)"/>
+  <rect x="0" y="0" width="4" height="200" rx="2" fill="#C9A227"/>
+
+  <g font-family="ui-monospace, 'SF Mono', 'JetBrains Mono', Menlo, Consolas, monospace">
+    <text x="28" y="42" font-size="19" font-weight="700" fill="#E6EDF3">post-office-twin</text>
+    <rect x="218" y="26" width="76" height="20" rx="10" fill="#C9A227" fill-opacity="0.16" stroke="#8C7019"/>
+    <text x="256" y="40" font-size="10" fill="#E3C25A" text-anchor="middle">FINALIST</text>
+    <rect x="300" y="26" width="66" height="20" rx="10" fill="#3776AB" fill-opacity="0.14" stroke="#2C5E88"/>
+    <text x="333" y="40" font-size="10" fill="#7FB2E0" text-anchor="middle">Python</text>
+    <rect x="372" y="26" width="58" height="20" rx="10" fill="#61DAFB" fill-opacity="0.10" stroke="#2B8FA8"/>
+    <text x="401" y="40" font-size="10" fill="#61DAFB" text-anchor="middle">React</text>
+
+    <text x="28" y="70" font-size="12.5" fill="#8B98A8">A post office floor plan that checks itself against</text>
+    <text x="28" y="90" font-size="12.5" fill="#8B98A8">five building codes, and fixes what it can.</text>
+
+    <!-- The customer's own file, before and after one press of the fix. -->
+    <g transform="translate(28 108)">
+      <text x="0" y="8" font-size="9" fill="#5A6675">AUTO-FIX, THE CUSTOMER'S OWN FILE</text>
+
+      <rect class="shrink" x="0" y="16" width="230" height="12" rx="3" fill="#F87171"/>
+      <text x="238" y="26" font-size="10" fill="#8B98A8">11 → 2</text>
+      <text x="0" y="40" font-size="9" fill="#5A6675">problems</text>
+
+      <rect class="widen" x="0" y="48" width="217" height="12" rx="3" fill="#34D399"/>
+      <line x1="207" y1="44" x2="207" y2="64" stroke="#E3C25A" stroke-width="1.5" stroke-dasharray="2 2"/>
+      <text x="238" y="58" font-size="10" fill="#8B98A8">0.74 → 1.89 m</text>
+      <text x="0" y="72" font-size="9" fill="#5A6675">clear path from the entrance</text>
+      <text x="207" y="72" font-size="9" fill="#E3C25A" text-anchor="middle">norm 1.8</text>
+    </g>
+
+    <g transform="translate(360 110)">
+      <text x="0" y="8" font-size="10" fill="#5A6675">EVERY FINDING CITES</text>
+      <rect x="0" y="16" width="192" height="46" rx="6" fill="#0D1117" stroke="#1F2833"/>
+      <text x="10" y="34" font-size="9.5" fill="#F87171">0.69 m at a 1.8 m norm</text>
+      <text x="10" y="50" font-size="9.5" fill="#22D3EE">SP 59.13330.2020, cl. 6.2.1</text>
+      <text x="0" y="78" font-size="10" fill="#5A6675">a measure, a norm, a clause</text>
+    </g>
+  </g>
+</svg>

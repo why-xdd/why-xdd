@@ -7,6 +7,7 @@
 <a href="https://artem-portfolio-mocha.vercel.app"><img src="https://img.shields.io/badge/site-artem--portfolio.vercel.app-FFFF00?style=flat-square&logo=vercel&logoColor=black&labelColor=0D1117" alt="personal site"/></a>
 <a href="mailto:why.not.live.alone@gmail.com"><img src="https://img.shields.io/badge/email-why.not.live.alone%40gmail.com-EA4335?style=flat-square&logo=gmail&logoColor=white&labelColor=0D1117" alt="email"/></a>
 <a href="https://github.com/why-xdd?tab=repositories"><img src="https://img.shields.io/badge/repositories-7C7CE0?style=flat-square&logo=github&logoColor=white&labelColor=0D1117" alt="repositories"/></a>
+<a href="https://github.com/why-xdd/post-office-twin"><img src="https://img.shields.io/badge/PostCode%20Challenge%202026-finalist-C9A227?style=flat-square&labelColor=0D1117" alt="PostCode Challenge 2026 finalist"/></a>
 <img src="https://img.shields.io/badge/open%20to-internships-34D399?style=flat-square&labelColor=0D1117" alt="open to internships"/>
 <img src="https://komarev.com/ghpvc/?username=why-xdd&style=flat-square&color=7C7CE0&label=views&labelColor=0D1117" alt="profile views"/>
 
@@ -36,6 +37,35 @@ Most of my work is **Python** and **Go** on the server side, with a detour into
 <div align="center">
 <img width="72%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/terminal.svg" alt="whoami: backend developer, Python · Go · TypeScript · SQL, FastAPI · aiogram 3, PostgreSQL · Redis, Docker · GitHub Actions"/>
 </div>
+
+<img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/divider.svg" alt=""/>
+
+## ⟡ &nbsp;Hackathons
+
+### [`⬢` post-office-twin](https://github.com/why-xdd/post-office-twin) &nbsp;·&nbsp; finalist, PostCode Challenge 2026
+
+**A post office floor plan that checks itself against the building code — and fixes what it can.**
+
+<a href="https://github.com/why-xdd/post-office-twin"><img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/shot-post-office-twin.png" alt="The organisers' sample plan with the proposed fix: dashed arrows show where six objects move; the panel reads problems 11 to 2, clear path from the entrance 0.74 to 1.89 metres, waiting seats 24 to 20"/></a>
+
+<sub>The organisers' own sample plan, before anything moves. **11 problems → 2**, the clear path from the entrance **0.74 m → 1.89 m** against a 1.8 m norm — and the price named up front: four waiting seats.</sub>
+
+<a href="https://github.com/why-xdd/post-office-twin"><img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/shot-post-office-twin2.png" alt="The same plan in 3D: equipment models at their real heights, visitor routes as blue strips, and the two objects behind the remaining problems marked in red"/></a>
+
+<sub>The same plan in 3D. Heights come from the equipment dictionary, the routes from the plan, and the two problems left are marked on the objects that cause them.</sub>
+
+<img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/card-post-office-twin.svg" alt="post-office-twin — problems shrinking from 11 to 2 while the clear path widens past the 1.8 metre norm"/>
+
+The Russian Post engineering hackathon by Pochtatech and Innopolis University, track *Digital twin
+of a post office*, defended in the final in Innopolis on 8 October 2026. Seventeen rules from five
+Russian codes — accessibility, fire safety, postal facility design — and every finding is a
+measurement, a norm and a clause number, drawn on the plan where the floor is narrowest.
+
+The optimiser fully checks only 24 of the hundreds of spots a new object could take, and a
+gradient-boosted model picks which: the best spot is found in **94 %** of tasks against 61 % without
+it, **11× faster** than checking them all. Every spot that reaches the answer still passes all 17 rules
+in full, so the model can order but never decide. An early version reached "zero violations" by
+driving a cashier window into the middle of the hall; windows are now off-limits, and the README says so.
 
 <img width="100%" src="https://raw.githubusercontent.com/why-xdd/why-xdd/main/assets/divider.svg" alt=""/>
 
